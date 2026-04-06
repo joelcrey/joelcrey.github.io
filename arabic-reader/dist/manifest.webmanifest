@@ -1,0 +1,1 @@
+{"name":"Arabic Reading Assistant","short_name":"Arabic Reader","start_url":"/arabic-reader/","display":"standalone","background_color":"#f9f8f5","lang":"en","scope":"/arabic-reader/","description":"Interactive Arabic text reader with word analysis","theme_color":"#ffffff","icons":[{"src":"icon.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
