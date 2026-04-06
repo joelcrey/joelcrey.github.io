@@ -46,7 +46,7 @@
 
 									<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span> -->
 
-									<p>My research has been mainly focused in Singularity Theory in Positive Characteristic, which lays in the field of Commutative Algebra. I have spent most of my time thinking about singularities and numerical invariants derived from the Frobenius endomorphism, also known as F-singularities and F-invariants. I have dedicated most of my time to different aspects of the Watanabe–Yoshida conjecture, one of the main driving questions in the field of Hilbert–Kunz theory.</p>
+									<p>My research has been mainly focused in Singularity Theory in Positive Characteristic, which lays in the field of Commutative Algebra. During my PhD I have been mostly thinking about singularities and numerical invariants derived from the Frobenius endomorphism, also known as F-singularities and F-invariants, with a focus on different aspects of the Watanabe–Yoshida conjecture, one of the main driving questions in the field of Hilbert–Kunz theory.</p>
 
 									<p>In this page, you can find a summary of some projects I have been working on. Feel free to reach out if you have any comments!</p>
 
@@ -60,12 +60,14 @@
 									<h3>On the Strong Watanabe–Yoshida conjecture</h3>
 									<p>The Watanabe–Yoshida conjecture thus roughly states that the \(A_1\) singularity attains the infimum of the Hilbert–Kunz multiplicity, and is the only one to do so. This second part of the statement is what we call the "Strong" Watanabe–Yoshida conjecture. The goal of this project was settling the strong form of the conjecture for complete intersections, building on results by Enescu and Shimomoto. As a corollary, we also obtain the result in dimension up to 7 for general (unmixed) singularities:</p>
 									<!-- <p>The conjecture is still an open problem to this day (in 2026), but the first part of the statement has been settled in several cases through the use of different techniques: singularities of dimension up to 7, or multiplicity up to 5, and Complete Intersections. All of these, always in odd characteristic. However, the strong part of the conjecture is hardly ever addressed in the literature. The goal of this project was settling the strong form of the conjecture in all of those cases, of course, including the always forgotten characteristic 2 cases:</p> -->
-									<p><b>Theorem (2025).</b> Let \((R,\mathfrak{m},k)\) be an unmixed nonregular local ring of characteristic \(p>0\). Then, if the dimension of \(R\) is less than 7, or if \(R\) is a complete intersection, then \(e_\text{HK}(R)= e_\text{HK}(R_{2,d})\) implies that that \(\widehat{R} \cong k[[x_0,\dots,x_d]]/(x_0^2+\dots+x_d^2)\).
+									<p><b>Theorem (2025).</b> Let \((R,\mathfrak{m},k)\) be an unmixed nonregular local ring of characteristic \(p>0\). Then, if the dimension of \(R\) is less than 7, or if \(R\) is a complete intersection, then \(e_\text{HK}(R)= e_\text{HK}(R_{p,d})\) implies that that \(\widehat{R} \cong k[[x_0,\dots,x_d]]/(x_0^2+\dots+x_d^2)\).
 
 									<h3>On the characteristic 2 case of the conjecture</h3>
 									<p>Back in 2022, before I started my PhD at BCAM, I had the opportunity of doing an internship under the supervision of Ilya Smirnov. He suggested that we try to fill in some gaps in the literature of the Watanabe–Yoshida conjecture regarding characteristic 2.</p>
+
+									<p>The subtlety is that, in characteristic 2, the equation of an \(A_1\) changes slightly (see the classification of <a href="https://doi.org/10.1007/BF02570742">Simple Singularities in positive characteristic</a>). If the dimension is odd, then the singularity is defined by \(x_0x_1+...+x_{d-1}x_{d}\), and if it is even, then by \(x_0x_1+...+x_{d-2}x_{d-1}+x_d^2\).</p>
 									<!-- <p>This conjecture was not even stated in this case originally until 2009. Fortunately, the known cases of the conjecture, despite being mostly characteristic dependent, often reduce to two problems: computing the actual value of the Hilbert–Kunz multiplicity of the \(A_1\) singularities, and showing the conjecture for hypersurfaces. The main result of the project is the following:</p> -->
-									<p><b>Theorem (2022).</b> Let \((R,\mathfrak{m})\) be an unmixed nonregular local ring of characteristic 2. Then, if the dimension of \(R\) is less than 7, or if \(R\) is a complete intersection, then \(e_\text{HK}(R)\geq e_\text{HK}(R_{2,d})\).
+									<p><b>Theorem (2022).</b> Let \((R,\mathfrak{m},k)\) be an unmixed nonregular local ring of characteristic 2. Then, if the dimension of \(R\) is less than 7, or if \(R\) is a complete intersection, then \(e_\text{HK}(R)\geq e_\text{HK}(R_{2,d})\), with equality only if \(\hat{R} = R_{2,d}\hat{\otimes} k\)</p>
 								</section>
 
 						</div>
