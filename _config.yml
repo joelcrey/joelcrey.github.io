@@ -1,0 +1,35 @@
+title: Joel Castillo-Rey
+description: PhD researcher at BCAM
+
+email_institutional: jcastillo@bcamath.org
+email_personal: joelcrey99@gmail.com
+github: https://github.com/joelcrey
+arxiv: https://arxiv.org/search/math?searchtype=author&query=Castillo-Rey,+J
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+
+# Posts are served at /posts/<file-name>.html
+permalink: /posts/:title.html
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.txt
+  - README.md
+  - LICENSE.txt
+  - Gemfile
+  - Gemfile.lock
+  - assets/sass
+  - vendor
