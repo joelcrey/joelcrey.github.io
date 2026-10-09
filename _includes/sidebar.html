@@ -29,8 +29,21 @@
 						{% if group_posts.size > 0 %}
 					<li><span class="opener">{{ parts[1] }}</span>
 						<ul>
+							{% comment %} Posts of a series are listed together, in part order, where the series first appears. {% endcomment %}
+							{% assign listed_series = "" %}
 							{% for post in group_posts %}
+								{% if post.series %}
+									{% assign marker = "|" | append: post.series | append: "|" %}
+									{% unless listed_series contains marker %}
+										{% assign listed_series = listed_series | append: marker %}
+										{% assign parts = group_posts | where: "series", post.series | sort: "series_part" %}
+										{% for part in parts %}
+							<li><a href="{{ part.url | relative_url }}">{{ part.title }}</a></li>
+										{% endfor %}
+									{% endunless %}
+								{% else %}
 							<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+								{% endif %}
 							{% endfor %}
 						</ul>
 					</li>
