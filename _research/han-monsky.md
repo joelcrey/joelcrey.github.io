@@ -6,7 +6,7 @@ order: 1
 published: false
 ---
 
-In these notes, I explain the algorithm to compute the Hilbert–Kunz function and the F-signature function of any given diagonal hypersurface, i.e., of the form $x_1^{d_1}+\dots+x_n^{d_n}$, in any characteristic [HM93].
+These notes are a (very) preliminary draft that explains the theory of the Hilbert–Kunz function and the F-signature function of the diagonal hypersurfaces, those of the form $x_1^{d_1}+\dots+x_n^{d_n}$, in any characteristic [HM93].
 
 The notes are split into a series of posts, where the SageMath sessions can be run in the browser:
 
