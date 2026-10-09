@@ -5,6 +5,7 @@
 		<a href="{{ '/' | relative_url }}" class="logo"><strong>{{ site.title }}</strong></a>
 		<nav class="site-nav" aria-label="Main">
 			<ul>
+				<li><a href="{{ '/' | relative_url }}"{% if here == '/' or here == '/index' %} class="active"{% endif %}>Home</a></li>
 				<li><a href="{{ '/research.html' | relative_url }}"{% if here contains '/research' %} class="active"{% endif %}>Research</a></li>
 				{% if math_posts.size > 0 %}<li><a href="{{ '/math.html' | relative_url }}"{% if here == '/math' or page.categories contains 'math' %} class="active"{% endif %}>Math thoughts</a></li>{% endif %}
 				<li><a href="{{ '/cv.html' | relative_url }}"{% if here == '/cv' %} class="active"{% endif %}>CV</a></li>
