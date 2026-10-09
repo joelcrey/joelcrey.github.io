@@ -19,6 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # The CV page data and the CV PDF are generated from cv/cv.xlsx
+      - run: python3 cv/build_cv.py
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: acadcv.tex
+          working_directory: cv
+          latexmk_use_lualatex: true
+      - run: cp cv/acadcv.pdf acadcv.pdf
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"

@@ -5,3 +5,11 @@ _site
 vendor
 .DS_Store
 .bundle
+
+# LaTeX build files of the CV
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.fls
+cv/*.fdb_latexmk
+cv/acadcv.pdf

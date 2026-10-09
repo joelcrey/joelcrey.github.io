@@ -40,4 +40,5 @@ exclude:
   - Gemfile.lock
   - assets/sass
   - .github
+  - cv
   - vendor
