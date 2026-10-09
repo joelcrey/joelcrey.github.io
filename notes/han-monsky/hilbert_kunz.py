@@ -1732,9 +1732,11 @@ HanMonskyRing = RepresentationRing
 
 def _monomial_blocks(f):
     """Exponent lists of f, one per monomial, checking that the monomials of f use pairwise
-    disjoint sets of variables, all variables of the ring.  Nonzero coefficients are allowed:
-    over an algebraic closure they can be absorbed by rescaling one variable of each monomial,
-    and lengths do not change under field extension.  Returns (p, exps, variable positions)."""
+    disjoint sets of variables.  Variables of the ring that f does not involve are ignored:
+    R = k[[x_1..x_n]]/(f) is taken over the variables of f only, so one ring S.<x,y,z,t>
+    serves for f = x^2 + y^2 as well.  Nonzero coefficients are allowed: over an algebraic
+    closure they can be absorbed by rescaling one variable of each monomial, and lengths do
+    not change under field extension.  Returns (p, exps, variable positions)."""
     P = f.parent()
     k = P.base_ring()
     if not (hasattr(k, "characteristic") and k.is_finite()):
@@ -1751,16 +1753,28 @@ def _monomial_blocks(f):
         used |= set(support)
         exps.append([int(ev[i]) for i in support])
         positions.append(support)
-    if len(used) != P.ngens():
-        raise ValueError("every variable of the ring must appear in f")
     return p, exps, positions
 
 
-def _ideal_shape(positions, ideal):
-    """ideal = [a_1, ..., a_N] in the order of the ring variables -> nested shape of exps."""
+def _ideal_exponents(positions, ideal, ngens):
+    """{ring variable position: a_i} from ideal = [a_1, ...], given either for all the ring
+    variables or only for the variables of f (both in the order of the ring variables)."""
+    used = sorted(i for block in positions for i in block)
+    ideal = [int(a) for a in ideal]
+    if len(ideal) == ngens:
+        return {i: ideal[i] for i in used}
+    if len(ideal) == len(used):
+        return dict(zip(used, ideal))
+    raise ValueError("ideal needs one exponent per variable of f (%d) or of the ring (%d)"
+                     % (len(used), ngens))
+
+
+def _ideal_shape(positions, ideal, ngens):
+    """ideal = [a_1, ...] (see _ideal_exponents) -> nested shape of exps."""
     if ideal is None:
         return None
-    return [[int(ideal[i]) for i in block] for block in positions]
+    a = _ideal_exponents(positions, ideal, ngens)
+    return [[a[i] for i in block] for block in positions]
 
 
 def _power(base, expo):
@@ -1903,7 +1917,7 @@ def HK_function_diagonal(f, ideal=None):
     if any(len(b) != 1 for b in exps):
         raise ValueError("f is not diagonal; try HK_function_disjoint_monomials(f)")
     exps = [b[0] for b in exps]
-    idl = None if ideal is None else [b[0] for b in _ideal_shape(pos, ideal)]
+    idl = None if ideal is None else [b[0] for b in _ideal_shape(pos, ideal, f.parent().ngens())]
     D = eHK_diagonal(p, exps, idl, _data=True)
     return _han_monsky_function("HK", p, exps, idl, D['eHK'], -1,
                                 lambda e: _hk_value(p, exps, idl, e))
@@ -1980,7 +1994,7 @@ def HK_function_disjoint_monomials(f, ideal=None):
         HK_e = 285166/96099 * 5^(4e) - 752/309 * 7^e + 145/311 * 3^e   for e >= 0
     """
     p, exps, pos = _monomial_blocks(f)
-    idl = _ideal_shape(pos, ideal)
+    idl = _ideal_shape(pos, ideal, f.parent().ngens())
     return _formula_object("HK", str(hk_formula(p, exps, idl)), lambda e: hk(p, exps, e, idl))
 
 
@@ -1996,6 +2010,10 @@ def HK_groebner(f, e, ideal=None):
     computed directly with a Groebner basis (slow, but uses no theory at all)."""
     P = f.parent()
     p = Integer(P.base_ring().characteristic())
-    a = [1] * P.ngens() if ideal is None else list(ideal)
+    _, _, pos = _monomial_blocks(f)
+    a = {i: 1 for block in pos for i in block} if ideal is None else _ideal_exponents(pos, ideal, P.ngens())
+    used = sorted(a)                                     # work over the variables of f only
+    Q = PolynomialRing(P.base_ring(), [str(P.gen(i)) for i in used])
+    g = Q(f)
     q = p ** int(e)
-    return P.ideal([f] + [x ** (ai * q) for x, ai in zip(P.gens(), a)]).vector_space_dimension()
+    return Q.ideal([g] + [Q.gen(j) ** (a[i] * q) for j, i in enumerate(used)]).vector_space_dimension()
