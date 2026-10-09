@@ -1,0 +1,31 @@
+{% comment %}
+Turns ```sage code blocks into runnable SageMathCell cells (https://sagecell.sagemath.org).
+Enabled per page with `sagecell: true`. Cells on a page share one Sage session, like notebook cells.
+{% endcomment %}
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<style>
+	.sage-cell { margin: 0 0 2em 0; }
+	.sage-cell .sagecell_evalButton { height: 2.75em; line-height: 2.75em; padding: 0 2em; margin: 0.6em 0; font-size: 0.8em; }
+	.sage-cell .sagecell_output pre { font-size: 0.85em; }
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		document.querySelectorAll('code.language-sage').forEach(function (source) {
+			var block = source.closest('div.language-sage') || source.closest('pre');
+			var cell = document.createElement('div');
+			cell.className = 'sage-cell';
+			var code = document.createElement('script');
+			code.type = 'text/x-sage';
+			code.textContent = source.textContent.replace(/\n$/, '');
+			cell.appendChild(code);
+			block.replaceWith(cell);
+		});
+		sagecell.makeSagecell({
+			inputLocation: 'div.sage-cell',
+			evalButtonText: 'Run',
+			linked: true,
+			languages: ['sage'],
+			hide: ['permalink', 'language']
+		});
+	});
+</script>

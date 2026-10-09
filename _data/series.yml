@@ -1,0 +1,14 @@
+# Post series. A post joins one with `series: <key>` and `series_part: <n>` in its front matter.
+han-monsky:
+  title: The Han–Monsky algorithm and diagonal hypersurfaces
+  files:
+    - name: Notes (PDF)
+      url: /notes/han-monsky/han_monsky.pdf
+    - name: "Notebook 1: the Han–Monsky ring"
+      url: https://github.com/joelcrey/joelcrey.github.io/blob/main/notes/han-monsky/01_representation_ring.ipynb
+    - name: "Notebook 2: the Han–Monsky algorithm"
+      url: https://github.com/joelcrey/joelcrey.github.io/blob/main/notes/han-monsky/02_han_monsky.ipynb
+    - name: "Notebook 3: the Chiang–Hung algorithm"
+      url: https://github.com/joelcrey/joelcrey.github.io/blob/main/notes/han-monsky/03_chiang_hung.ipynb
+    - name: hilbert_kunz.py (SageMath)
+      url: /notes/han-monsky/hilbert_kunz.py

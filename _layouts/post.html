@@ -7,5 +7,7 @@ layout: default
 		<p>{{ page.date | date: "%-d %B %Y" }}</p>
 	</header>
 
+	{% if page.series %}{% include series-nav.html %}{% endif %}
+
 	{{ content }}
 </section>

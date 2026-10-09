@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+		{% if page.sagecell %}{% include sagecell.html %}{% endif %}
 	</head>
 	<body class="is-preload">
 

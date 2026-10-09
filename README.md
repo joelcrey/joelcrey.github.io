@@ -37,6 +37,18 @@ published: false      # optional: keep it hidden while unfinished
 ---
 ```
 
+## Runnable Sage cells
+
+Put `sagecell: true` in a page's front matter, and every ```` ```sage ```` code block becomes a cell
+readers can run on [SageMathCell](https://sagecell.sagemath.org). Cells on a page share one session.
+To use a module, start with a cell like
+`load("https://joelcrey.github.io/notes/han-monsky/hilbert_kunz.py")` (it only works once that file is live).
+
+## Post series
+
+Add `series: <key>` and `series_part: <n>` to the posts, and describe the series (title, extra
+files) in `_data/series.yml`. Each post then shows a box linking all the parts.
+
 ## Math and line breaks
 
 Same as Obsidian: `$x$` is inline, `$$x$$` is displayed (even mid-line), `\$` is a
