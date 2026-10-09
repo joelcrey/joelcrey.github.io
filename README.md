@@ -20,11 +20,16 @@ Personal website, built with Jekyll. Edit Markdown, push to `main`, and the GitH
 Everything in the CV comes from `cv/cv.xlsx`:
 
 - **Sections** sheet: the sections, in order. `type` is `list` (entries from the sheet with the same
-  name) or `text` (the `text` column). `web`/`pdf` say where the section appears;
-  `details_in_pdf: no` hides the `details` column in the PDF (used for talk titles).
-- One sheet per list section: one row per entry, oldest first, so new entries go at the bottom.
-  The CV shows them in reverse order, newest first. `web`/`pdf` can
-  hide a single row; blank means yes. Write `*italics*` or `**bold**` in any text cell.
+  name), `events` (rows of the Events sheet with the given `contribution`) or `text` (the `text`
+  column). `web`/`pdf` say where the section appears; `details_in_pdf: no` hides talk titles (or the
+  `details` column) in the PDF.
+- **Events** sheet: every conference, workshop, seminar or school, one row each. `contribution` is
+  `invited talk`, `talk`, `poster` or `attended` (blank means attended), and `title` is the title of
+  your talk or poster. The CV puts each event in Invited Talks, Other talks, Posters or Conferences
+  and courses accordingly.
+- Other sheets (Education, Publications, Visits, Organization): one row per entry.
+- In every sheet, put older entries first, so new ones go at the bottom; the CV shows them newest
+  first. `web`/`pdf` can hide a single row; blank means yes. Write `*italics*` or `**bold**` in any cell.
 
 When you push, GitHub regenerates the CV page and `acadcv.pdf`. To see the result locally first:
 
