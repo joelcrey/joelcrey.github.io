@@ -1,13 +1,15 @@
 # joelcrey.github.io
 
-Personal website, built by GitHub Pages with Jekyll. Edit Markdown, push, and the site rebuilds.
+Personal website, built with Jekyll. Edit Markdown, push to `main`, and the GitHub Action in
+`.github/workflows/pages.yml` rebuilds and publishes the site.
 
 ## Where things live
 
 | To change…                | Edit                                     |
 |---------------------------|------------------------------------------|
 | CV                        | `cv.md` (and replace `acadcv.pdf`)       |
-| Research summary          | `research.md`                            |
+| Research intro            | `research.md`                            |
+| A research project        | `_research/<any name>.md`                |
 | About me                  | `aboutme.md`                             |
 | Homepage banner           | `index.html`                             |
 | Sidebar menu, contact     | `_includes/sidebar.html`, `_config.yml`  |
@@ -21,18 +23,33 @@ Personal website, built by GitHub Pages with Jekyll. Edit Markdown, push, and th
 
 Drafts in `_drafts/` are never published.
 
-## Math
+## Research projects
 
-Write LaTeX between double dollars: `$$x^2$$` inside a sentence is inline;
-`$$ ... $$` on its own paragraph is displayed. Don't use `\(...\)` or `$...$`,
-Markdown eats the backslashes.
+One file per project in `_research/`, with any file name (Obsidian-friendly):
+
+```yaml
+---
+title: On the Watanabe–Yoshida conjecture
+summary: One or two sentences for the card on the Research page.
+order: 2              # position on the Research page and in the menu
+slug: watanabe-yoshida   # optional: URL becomes /research/watanabe-yoshida.html
+published: false      # optional: keep it hidden while unfinished
+---
+```
+
+## Math and line breaks
+
+Same as Obsidian: `$x$` is inline, `$$x$$` is displayed (even mid-line), `\$` is a
+literal dollar sign. A single line break is kept as a line break.
+(`_plugins/obsidian_math.rb` does the translation.)
 
 ## Preview locally
 
     bundle install                 # once
-    bundle exec jekyll serve --drafts
+    bundle exec jekyll serve --drafts --unpublished --livereload
 
-then open http://localhost:4000.
+then open http://localhost:4000. `--drafts --unpublished` also shows unfinished posts and projects;
+leave them out to see exactly what will be published.
 
 ## Credits
 

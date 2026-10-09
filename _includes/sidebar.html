@@ -10,7 +10,15 @@
 				<ul>
 					<li><a href="{{ '/' | relative_url }}">Homepage</a></li>
 					<li><a href="{{ '/aboutme.html' | relative_url }}">About me</a></li>
-					<li><a href="{{ '/research.html' | relative_url }}">Research</a></li>
+					<li><span class="opener">Research</span>
+						<ul>
+							<li><a href="{{ '/research.html' | relative_url }}">Overview</a></li>
+							{% assign projects = site.research | sort: "order" %}
+							{% for project in projects %}
+							<li><a href="{{ project.url | relative_url }}">{{ project.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</li>
 					<li><a href="{{ '/cv.html' | relative_url }}">CV</a></li>
 
 					{% comment %} One collapsible group per post category; groups with no posts are hidden. {% endcomment %}

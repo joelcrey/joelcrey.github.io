@@ -9,10 +9,17 @@ arxiv: https://arxiv.org/search/math?searchtype=author&query=Castillo-Rey,+J
 markdown: kramdown
 kramdown:
   input: GFM
+  hard_wrap: true      # a single line break is a line break, as in Obsidian
   math_engine: mathjax
 
 # Posts are served at /posts/<file-name>.html
 permalink: /posts/:title.html
+
+# Research projects: one Markdown file each in _research/, any file name.
+collections:
+  research:
+    output: true
+    permalink: /research/:slug.html
 
 defaults:
   - scope:
@@ -32,4 +39,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - assets/sass
+  - .github
   - vendor

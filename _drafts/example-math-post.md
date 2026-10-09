@@ -5,16 +5,10 @@ summary: One or two sentences shown on the homepage card.
 # image: /images/emmynoether.jpg   # optional picture for the homepage card
 ---
 
-Files in `_drafts/` are never published. To publish, move this file to
-`_posts/` and rename it `YYYY-MM-DD-some-title.md`.
+Files in `_drafts/` are never published. To publish, move this file to `_posts/` and rename it `YYYY-MM-DD-some-title.md`.
 
-Inline math goes between double dollars: $$e_\text{HK}(R) \geq 1 + c_d$$.
-
-A formula on its own line (with blank lines around it) is displayed:
-
-$$
-\lim_{p\rightarrow \infty} e_\text{HK}(R_{p,d}) = 1+c_d.
-$$
+Math works as in Obsidian. Inline: $e_\text{HK}(R) \geq 1 + c_d$. Displayed, even mid-sentence: $$\lim_{p\rightarrow \infty} e_\text{HK}(R_{p,d}) = 1+c_d.$$
+A single line break is kept, so this line starts on a new line. Write \$5 for a literal dollar sign.
 
 **Theorem (Someone, 2026).** Bold text for theorem headers, *italics* for emphasis.
 
