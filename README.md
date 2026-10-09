@@ -41,8 +41,9 @@ published: false      # optional: keep it hidden while unfinished
 
 Put `sagecell: true` in a page's front matter, and every ```` ```sage ```` code block becomes a cell
 readers can run on [SageMathCell](https://sagecell.sagemath.org). Cells on a page share one session.
-To use a module, start with a cell like
-`load("https://joelcrey.github.io/notes/han-monsky/hilbert_kunz.py")` (it only works once that file is live).
+To make a module available, add `sage_preload: /path/to/module.py` to the front matter: the page gets a
+**Load module.py** button before the first cell, which sends the file (served by this site, so it also
+works in the local preview) to the Sage session.
 
 ## Post series
 

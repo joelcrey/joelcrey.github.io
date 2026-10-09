@@ -1,31 +1,73 @@
 {% comment %}
 Turns ```sage code blocks into runnable SageMathCell cells (https://sagecell.sagemath.org).
 Enabled per page with `sagecell: true`. Cells on a page share one Sage session, like notebook cells.
+
+With `sage_preload: /path/to/module.py`, a "Load module.py" button is added before the first cell.
+The page downloads the file from this site (so it also works in the local preview) and runs it in
+the session as plain Python, like Sage's load("module.py").
 {% endcomment %}
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
 <style>
-	.sage-cell { margin: 0 0 2em 0; }
-	.sage-cell .sagecell_evalButton { height: 2.75em; line-height: 2.75em; padding: 0 2em; margin: 0.6em 0; font-size: 0.8em; }
-	.sage-cell .sagecell_output pre { font-size: 0.85em; }
+	.sage-cell, .sage-preload { margin: 0 0 2em 0; }
+	.sage-cell .sagecell_evalButton, .sage-preload .sagecell_evalButton { height: 2.75em; line-height: 2.75em; padding: 0 2em; margin: 0.6em 0; font-size: 0.8em; }
+	.sage-cell .sagecell_output pre, .sage-preload .sagecell_output pre { font-size: 0.85em; }
+	.sage-preload .CodeMirror { display: none; }
 </style>
 <script>
-	document.addEventListener('DOMContentLoaded', function () {
-		document.querySelectorAll('code.language-sage').forEach(function (source) {
-			var block = source.closest('div.language-sage') || source.closest('pre');
+	(function () {
+		var preload = {{ page.sage_preload | relative_url | jsonify }};
+		var hasPreload = {{ page.sage_preload | jsonify }} !== null;
+
+		function sageCell(className, code) {
 			var cell = document.createElement('div');
-			cell.className = 'sage-cell';
-			var code = document.createElement('script');
-			code.type = 'text/x-sage';
-			code.textContent = source.textContent.replace(/\n$/, '');
-			cell.appendChild(code);
-			block.replaceWith(cell);
+			cell.className = className;
+			var script = document.createElement('script');
+			script.type = 'text/x-sage';
+			script.textContent = code;
+			cell.appendChild(script);
+			return cell;
+		}
+
+		function makeCells() {
+			var first = null;
+			document.querySelectorAll('code.language-sage').forEach(function (source) {
+				var block = source.closest('div.language-sage') || source.closest('pre');
+				var cell = sageCell('sage-cell', source.textContent.replace(/\n$/, ''));
+				block.replaceWith(cell);
+				first = first || cell;
+			});
+			return first;
+		}
+
+		document.addEventListener('DOMContentLoaded', function () {
+			var first = makeCells();
+			var options = { linked: true, languages: ['sage'], hide: ['permalink', 'language'] };
+			if (!hasPreload || !first) {
+				sagecell.makeSagecell(Object.assign({ inputLocation: 'div.sage-cell', evalButtonText: 'Run' }, options));
+				return;
+			}
+			var name = preload.split('/').pop();
+			fetch(preload).then(function (r) {
+				if (!r.ok) throw new Error(r.status + ' ' + r.statusText);
+				return r.text();
+			}).then(function (text) {
+				// base64 keeps the Sage preparser away from the module, which is plain Python
+				var encoded = btoa(unescape(encodeURIComponent(text)));
+				var code = 'import base64\nexec(compile(base64.b64decode("' + encoded + '").decode(), "' + name + '", "exec"))\nprint("' + name + ' loaded")';
+				var loader = sageCell('sage-cell sage-preload', code);
+				first.parentNode.insertBefore(loader, first);
+				// One makeSagecell call, so that all cells share one session
+				sagecell.makeSagecell(Object.assign({ inputLocation: 'div.sage-cell', evalButtonText: 'Run' }, options));
+				var rename = setInterval(function () {
+					var button = loader.querySelector('.sagecell_evalButton');
+					if (button) { button.textContent = 'Load ' + name; clearInterval(rename); }
+				}, 200);
+			}).catch(function (err) {
+				var note = document.createElement('p');
+				note.textContent = 'Could not load ' + name + ' (' + err.message + ').';
+				first.parentNode.insertBefore(note, first);
+				sagecell.makeSagecell(Object.assign({ inputLocation: 'div.sage-cell', evalButtonText: 'Run' }, options));
+			});
 		});
-		sagecell.makeSagecell({
-			inputLocation: 'div.sage-cell',
-			evalButtonText: 'Run',
-			linked: true,
-			languages: ['sage'],
-			hide: ['permalink', 'language']
-		});
-	});
+	})();
 </script>
