@@ -16,6 +16,16 @@ layout: default
 		</span>
 	</section>
 
+{% if site.data.map.size > 0 %}
+<!-- Map -->
+	<section>
+		<header class="major">
+			<h2>Where I've been doing math</h2>
+		</header>
+		{% include travel-map.html %}
+	</section>
+{% endif %}
+
 {% if site.posts.size > 0 %}
 <!-- Latest posts -->
 	<section>

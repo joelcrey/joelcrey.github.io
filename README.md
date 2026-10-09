@@ -32,6 +32,9 @@ Everything in the CV comes from `cv/cv.xlsx`:
 - Other sheets (Education, Publications, Visits, Organization): one row per entry.
 - In every sheet, put older entries first, so new ones go at the bottom; the CV shows them newest
   first. `web`/`pdf` can hide a single row; blank means yes. Write `*italics*` or `**bold**` in any cell.
+- **Places** sheet: the coordinates of each `place` for the map on the homepage. Every entry of
+  Education, Visits, Organization and Events with a place listed here gets a pin; entries that have
+  not ended yet show as upcoming. The build script names any place missing from this sheet.
 
 When you push, GitHub regenerates the CV page and `acadcv.pdf`. To see the result locally first:
 

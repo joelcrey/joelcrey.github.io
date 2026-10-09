@@ -214,8 +214,74 @@ def build():
 
     (ROOT / "_data").mkdir(exist_ok=True)
     (ROOT / "_data" / "cv.json").write_text(json.dumps(web_sections, ensure_ascii=False, indent=1) + "\n")
+    (ROOT / "_data" / "map.json").write_text(json.dumps(build_map(sheets), ensure_ascii=False, indent=1) + "\n")
     (CV_DIR / "sections.tex").write_text("\n".join(tex_lines))
-    print("wrote _data/cv.json and cv/sections.tex")
+    print("wrote _data/cv.json, _data/map.json and cv/sections.tex")
+
+
+# --- Map ---------------------------------------------------------------------
+
+MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+KINDS = {"invited talk": "Invited talk", "talk": "Talk", "poster": "Poster"}
+
+
+def end_of(when):
+    """The last (year, month) a date cell such as 'Oct 2025', 'Aug–Dec 2025' or '2023–Present' covers."""
+    if "present" in when.lower():
+        return (9999, 12)
+    years = re.findall(r"\d{4}", when)
+    if not years:
+        return (0, 0)
+    months = [MONTHS.index(m[:3].lower()) + 1 for m in re.findall(r"[A-Za-z]{3,}", when) if m[:3].lower() in MONTHS]
+    return (int(years[-1]), months[-1] if months else 12)
+
+
+def build_map(sheets):
+    """One marker per place in the Places sheet, listing everything that happened there.
+
+    Affiliations come from Education (current if the date says Present), trips from Visits,
+    Organization and Events. Trips that have not ended yet count as upcoming.
+    """
+    coords = {}
+    for p in as_records(sheets.get("Places", [])):
+        try:
+            coords[p["place"]] = (float(p["lat"]), float(p["lon"]))
+        except (KeyError, ValueError):
+            pass
+    today = (date.today().year, date.today().month)
+    entries = []
+    for name in ("Education", "Visits", "Organization"):
+        for e in as_records(sheets.get(name, [])):
+            e["date"] = excel_date(e.get("date", ""))
+            if name == "Education":
+                kind = "current" if end_of(e["date"])[0] == 9999 else "affiliation"
+            else:
+                kind = "upcoming" if end_of(e["date"]) > today else "trip"
+            entries.append((e, kind, web(e.get("title", ""), e.get("title_link", ""))
+                            + (", " + web(e["institution"], e.get("institution_link", "")) if e.get("institution") else "")))
+    for e in as_records(sheets.get("Events", [])):
+        e["date"] = excel_date(e.get("date", ""))
+        label = ", ".join(x for x in (web(e.get("event", ""), e.get("event_link", "")), web(e.get("host", ""))) if x)
+        what = KINDS.get(e.get("contribution", "").strip().lower())
+        entries.append((e, "upcoming" if end_of(e["date"]) > today else "trip",
+                        f"{what}, {label}" if what else label))
+    places, missing = {}, set()
+    for e, kind, text in entries:
+        place = e.get("place", "")
+        if not place or not yes(e.get("web", "")):
+            continue
+        if place not in coords:
+            missing.add(place)
+            continue
+        p = places.setdefault(place, {"place": place, "lat": coords[place][0], "lon": coords[place][1], "items": []})
+        p["items"].append({"text": text, "date": e["date"], "kind": kind, "end": end_of(e["date"])})
+    if missing:
+        print("cv.xlsx: not on the map (add them to the Places sheet):", ", ".join(sorted(missing)))
+    order = ["upcoming", "current", "affiliation", "trip"]
+    for p in places.values():
+        p["items"].sort(key=lambda it: it.pop("end"), reverse=True)
+        p["kind"] = min((it["kind"] for it in p["items"]), key=order.index)
+    return list(places.values())
 
 
 def build_pdf():

@@ -1,0 +1,226 @@
+[
+ {
+  "place": "Madrid, Spain",
+  "lat": 40.4168,
+  "lon": -3.7038,
+  "items": [
+   {
+    "text": "Invited talk, 5th BYMAT Conference, ICMAT",
+    "date": "Nov 2023",
+    "kind": "trip"
+   },
+   {
+    "text": "Master&#x27;s Degree in Advanced Mathematics, Universidad Complutense de Madrid",
+    "date": "2021–2022",
+    "kind": "affiliation"
+   },
+   {
+    "text": "<a href=\"https://eventos.ucm.es/86046/detail/iberosing-international-workshop-2022.html\">IberoSing International Workshop 2022</a>",
+    "date": "Nov 2022",
+    "kind": "trip"
+   },
+   {
+    "text": "Invited talk, XVI Workshop de Jóvenes Investigadores, Universidad Complutense de Madrid",
+    "date": "Sep 2022",
+    "kind": "trip"
+   },
+   {
+    "text": "Degree in Mathematics, Universidad Complutense de Madrid",
+    "date": "2017–2021",
+    "kind": "affiliation"
+   }
+  ],
+  "kind": "affiliation"
+ },
+ {
+  "place": "Bilbao, Spain",
+  "lat": 43.263,
+  "lon": -2.935,
+  "items": [
+   {
+    "text": "PhD Researcher, Basque Center for Applied Mathematics (BCAM)",
+    "date": "2023–Present",
+    "kind": "current"
+   },
+   {
+    "text": "Organizer of Parallel Session AL07 “Singularity Theory”, VII Congreso de Jóvenes Investigadores de la RSME (University of the Basque Country)",
+    "date": "Jan 2025",
+    "kind": "trip"
+   },
+   {
+    "text": "Talk, Light PhD Seminars, BCAM",
+    "date": "Dec 2024",
+    "kind": "trip"
+   },
+   {
+    "text": "<a href=\"https://www.bcamath.org/en/bcam-severo-ochoa-course-introduction-multiplicity-theory\">BCAM-Severo Ochoa Course: Introduction to multiplicity theory</a>, BCAM",
+    "date": "Apr 2023",
+    "kind": "trip"
+   },
+   {
+    "text": "Research Internship, BCAM",
+    "date": "Fall 2022",
+    "kind": "affiliation"
+   },
+   {
+    "text": "<a href=\"https://www.bcamath.org/en/bcam-severo-ochoa-lecture-introduction-morse-homology\">BCAM-Severo Ochoa Lecture: Introduction to Morse Homology</a>, BCAM",
+    "date": "Oct 2022",
+    "kind": "trip"
+   }
+  ],
+  "kind": "current"
+ },
+ {
+  "place": "Indiana, USA",
+  "lat": 40.4237,
+  "lon": -86.9212,
+  "items": [
+   {
+    "text": "Research Stay, Purdue University",
+    "date": "Aug–Dec 2025",
+    "kind": "trip"
+   },
+   {
+    "text": "Talk, Purdue Grad student seminar",
+    "date": "2025",
+    "kind": "trip"
+   },
+   {
+    "text": "Invited talk, <a href=\"https://vaibhav-pandey1.github.io/seminar.html\">CA Seminar</a>, Purdue University",
+    "date": "Oct 2025",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ },
+ {
+  "place": "Granada, Spain",
+  "lat": 37.1773,
+  "lon": -3.5986,
+  "items": [
+   {
+    "text": "<a href=\"https://iberosing.github.io/IW23/\">IberoSing International Workshop 2023</a>",
+    "date": "Nov 2023",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ },
+ {
+  "place": "Seville, Spain",
+  "lat": 37.3891,
+  "lon": -5.9845,
+  "items": [
+   {
+    "text": "Invited talk, <a href=\"https://sites.google.com/view/sevillargas/program\">RGAS School on Singularities</a>, Universidad de Sevilla",
+    "date": "Jan 2024",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ },
+ {
+  "place": "Zaragoza, Spain",
+  "lat": 41.6488,
+  "lon": -0.8891,
+  "items": [
+   {
+    "text": "Sheaf Cohomology Course",
+    "date": "Nov 2024",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ },
+ {
+  "place": "Guanajuato, Mexico",
+  "lat": 21.019,
+  "lon": -101.2574,
+  "items": [
+   {
+    "text": "Poster, <a href=\"https://sites.google.com/view/singularitiesalggeom2025/home\">Singularities in Algebra and Geometry Conference (CIMAT)</a>",
+    "date": "Jun 2025",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ },
+ {
+  "place": "Columbia, USA",
+  "lat": 38.9517,
+  "lon": -92.3341,
+  "items": [
+   {
+    "text": "<a href=\"https://sites.google.com/view/kumunu2025/home\">KUMUNU 2025</a>, University of Missouri",
+    "date": "Oct 2025",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ },
+ {
+  "place": "Illinois, USA",
+  "lat": 41.8708,
+  "lon": -87.6505,
+  "items": [
+   {
+    "text": "Invited talk, <a href=\"https://www.math.uic.edu/persisting_utilities/seminars/view_seminar?id=8039\">AG Seminar</a>, University of Illinois in Chicago",
+    "date": "Nov 2025",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ },
+ {
+  "place": "Michigan, USA",
+  "lat": 42.2808,
+  "lon": -83.743,
+  "items": [
+   {
+    "text": "Invited talk, <a href=\"https://lsa.umich.edu/math/news-events/all-events.detail.html/142145-21890070.html\">CA Seminar</a>, University of Michigan",
+    "date": "Nov 2025",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ },
+ {
+  "place": "Milan, Italy",
+  "lat": 45.4642,
+  "lon": 9.19,
+  "items": [
+   {
+    "text": "Poster, <a href=\"https://www.caag26.polimi.it\">CAAG in Milan</a>",
+    "date": "Jul 2026",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ },
+ {
+  "place": "Lausanne, Switzerland",
+  "lat": 46.5191,
+  "lon": 6.5668,
+  "items": [
+   {
+    "text": "Invited talk, <a href=\"https://sites.google.com/view/alapanmukhopadhyay/home/facets-of-frobenius-derived-invariants?authuser=0\">Facets of Frobenius derived invariants (Bernoulli Center)</a>, EPFL",
+    "date": "Sep 2026",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ },
+ {
+  "place": "Budapest, Hungary",
+  "lat": 47.4979,
+  "lon": 19.0402,
+  "items": [
+   {
+    "text": "<a href=\"https://site.pheedloop.com/event/Simonsschoolonhigherdimensionalvarieties/home/\">Simons School on Higher Dimensional Varieties</a>, Rényi Institute",
+    "date": "Oct 2026",
+    "kind": "trip"
+   }
+  ],
+  "kind": "trip"
+ }
+]
