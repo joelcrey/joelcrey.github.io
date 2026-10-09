@@ -1,6 +1,16 @@
-<!-- Header -->
-	<header id="header">
-		<a href="{{ '/cv.html' | relative_url }}" class="logo">CV</a>
+<!-- Header: name, main navigation and links -->
+	{% assign math_posts = site.posts | where_exp: "post", "post.categories contains 'math'" %}
+	{% assign here = page.url | remove: '.html' %}
+	<header id="header" class="site-header">
+		<a href="{{ '/' | relative_url }}" class="logo"><strong>{{ site.title }}</strong></a>
+		<nav class="site-nav" aria-label="Main">
+			<ul>
+				<li><a href="{{ '/research.html' | relative_url }}"{% if here contains '/research' %} class="active"{% endif %}>Research</a></li>
+				{% if math_posts.size > 0 %}<li><a href="{{ '/math.html' | relative_url }}"{% if here == '/math' or page.categories contains 'math' %} class="active"{% endif %}>Math thoughts</a></li>{% endif %}
+				<li><a href="{{ '/cv.html' | relative_url }}"{% if here == '/cv' %} class="active"{% endif %}>CV</a></li>
+				<li><a href="{{ '/aboutme.html' | relative_url }}"{% if here == '/aboutme' %} class="active"{% endif %}>About me</a></li>
+			</ul>
+		</nav>
 		<ul class="icons">
 			<li><a href="{{ site.github }}" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 			<li><a href="{{ site.arxiv }}" class="icon arxiv"><span class="label">arXiv</span></a></li>

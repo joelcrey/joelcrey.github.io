@@ -205,7 +205,8 @@ def build():
         web_rows = [web_entry(e) for e in rows if yes(e.get("web", ""))]
         pdf_rows = [e for e in rows if yes(e.get("pdf", ""))]
         if show_web and web_rows:
-            web_sections.append({"title": name, "items": web_rows})
+            web_sections.append({"title": name, "items": web_rows,
+                                 "collapsed": yes(s.get("web_collapsed", ""), default=False)})
         if show_pdf and pdf_rows:
             tex_lines.append(r"\section{%s}" % tex_escape(name))
             details = yes(s.get("details_in_pdf", ""))

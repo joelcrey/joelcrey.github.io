@@ -12,7 +12,9 @@ Personal website, built with Jekyll. Edit Markdown, push to `main`, and the GitH
 | A research project        | `_research/<any name>.md`                |
 | About me                  | `aboutme.md`                             |
 | Homepage banner           | `index.html`                             |
-| Sidebar menu, contact     | `_includes/sidebar.html`, `_config.yml`  |
+| Top menu                  | `_includes/header.html`                  |
+| Contact details (footer)  | `_config.yml`, `_includes/footer.html`   |
+| Extra styles              | `assets/css/custom.css`                  |
 | Page frame (head, scripts)| `_layouts/default.html`                  |
 
 ## Updating the CV
@@ -22,7 +24,7 @@ Everything in the CV comes from `cv/cv.xlsx`:
 - **Sections** sheet: the sections, in order. `type` is `list` (entries from the sheet with the same
   name), `events` (rows of the Events sheet with the given `contribution`) or `text` (the `text`
   column). `web`/`pdf` say where the section appears; `details_in_pdf: no` hides talk titles (or the
-  `details` column) in the PDF.
+  `details` column) in the PDF; `web_collapsed: yes` makes the section collapsible (closed) on the web page.
 - **Events** sheet: every conference, workshop, seminar or school, one row each. `contribution` is
   `invited talk`, `talk`, `poster` or `attended` (blank means attended), and `title` is the title of
   your talk or poster. The CV puts each event in Invited Talks, Other talks, Posters or Conferences
@@ -41,7 +43,7 @@ Name, title and contact details are in `cv/acadcv.tex`, which also sets the styl
 
 1. Copy `_drafts/example-math-post.md` into `_posts/` as `YYYY-MM-DD-short-title.md`.
 2. Set `title`, `category` (`math` or `thoughts`) and optionally `summary` / `image`.
-3. Push. It appears in the sidebar and on the homepage, at `/posts/short-title.html`.
+3. Push. It appears on the Math thoughts page (`math.html`) and the homepage, at `/posts/short-title.html`.
 
 Drafts in `_drafts/` are never published.
 
