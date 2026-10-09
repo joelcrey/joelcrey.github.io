@@ -4,7 +4,8 @@
     python3 cv/build_cv.py --pdf    # also compiles cv/acadcv.tex and copies it to acadcv.pdf
 
 In cv.xlsx, the "Sections" sheet lists the sections in order. A section of type "list" takes its
-rows from the sheet with the same name; one of type "text" uses the text column. Text cells may use
+rows from the sheet with the same name, listed oldest first (the CV shows them newest first); one of
+type "text" uses the text column. Text cells may use
 *italics* and **bold**. Only the Python standard library is needed.
 """
 import html
@@ -167,7 +168,8 @@ def build():
             continue
         if name not in sheets:
             sys.exit(f'cv.xlsx: section "{name}" has no sheet with that name')
-        rows = [e for e in as_records(sheets[name]) if e.get("title") or e.get("institution")]
+        # The sheets list entries oldest first; the CV shows them newest first
+        rows = [e for e in as_records(sheets[name]) if e.get("title") or e.get("institution")][::-1]
         for e in rows:
             e["date"] = excel_date(e.get("date", ""))
         web_rows = [web_entry(e) for e in rows if yes(e.get("web", ""))]

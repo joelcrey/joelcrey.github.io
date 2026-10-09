@@ -22,7 +22,8 @@ Everything in the CV comes from `cv/cv.xlsx`:
 - **Sections** sheet: the sections, in order. `type` is `list` (entries from the sheet with the same
   name) or `text` (the `text` column). `web`/`pdf` say where the section appears;
   `details_in_pdf: no` hides the `details` column in the PDF (used for talk titles).
-- One sheet per list section: one row per entry, in the order they should appear. `web`/`pdf` can
+- One sheet per list section: one row per entry, oldest first, so new entries go at the bottom.
+  The CV shows them in reverse order, newest first. `web`/`pdf` can
   hide a single row; blank means yes. Write `*italics*` or `**bold**` in any text cell.
 
 When you push, GitHub regenerates the CV page and `acadcv.pdf`. To see the result locally first:
