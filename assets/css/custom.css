@@ -42,7 +42,8 @@
 	margin-top: 3em;
 	padding-top: 1.5em;
 }
-	#footer.site-footer .copyright { font-size: 0.85em; margin-bottom: 0; }
+	#footer.site-footer p { margin-bottom: 0; }
+	#footer.site-footer .credit { float: right; font-size: 0.8em; opacity: 0.7; }
 
 /* Collapsible CV sections */
 details.cv-section { margin-bottom: 1.5em; }
