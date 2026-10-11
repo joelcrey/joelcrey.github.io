@@ -11,11 +11,7 @@ collapsible: closed
 
 Let $R_{p,d} := \mathbb{F}_p[[x_0,\dots,x_d]]/(x_0^2+\dots+x_d^2)$ the ring of formal series at the origin of an ordinary double point of characteristic $p$.
 
-**Conjecture (Watanabe–Yoshida, 2005).** Let $(R,\mathfrak{m},k)$ be an unmixed nonregular local ring of characteristic $p>0$. Then,
-
-$$e_\text{HK}(R)\geq e_\text{HK}(R_{p,d})\geq 1+c_d.$$
-
-Furthermore, if the first equality holds, then $\widehat{R} \cong k[[x_0,\dots,x_d]]/(x_0^2+\dots+x_d^2)$.
+**Conjecture (Watanabe–Yoshida, 2005).** Let $(R,\mathfrak{m},k)$ be an unmixed nonregular local ring of characteristic $p>0$. Then, $e_\text{HK}(R)\geq e_\text{HK}(R_{p,d})\geq 1+c_d.$ Furthermore, if the first equality holds, then $\widehat{R} \cong k[[x_0,\dots,x_d]]/(x_0^2+\dots+x_d^2)$.
 
 The Watanabe–Yoshida conjecture thus roughly states that the $A_1$ singularity attains the infimum of the Hilbert–Kunz multiplicity, and is the only one to do so. The first part of the statement was known to be true for complete intersections and for unmixed local rings of dimension up to 7, always in characteristic $p>2$. 
 
