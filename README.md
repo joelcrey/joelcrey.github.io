@@ -83,6 +83,13 @@ Same as Obsidian: `$x$` is inline, `$$x$$` is displayed (even mid-line), `\$` is
 literal dollar sign. A single line break is kept as a line break.
 (`_plugins/obsidian_math.rb` does the translation.)
 
+## Collapsible sections
+
+Add `collapsible: true` to the front matter of a post or research page and every section under
+its top-level headings (`##`, or `###` if that is the largest used) opens and closes by clicking
+its title; `collapsible: closed` starts them closed. The Markdown stays the same, so it still
+reads normally in Obsidian.
+
 ## Preview locally
 
     bundle install                 # once

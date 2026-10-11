@@ -40,6 +40,23 @@
 			<script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
 			<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
 			<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+			<script>
+				// Collapsible sections (_plugins/collapsible_sections.rb): open the section a link points to,
+				// and redraw Sage cells that were set up while their section was closed.
+				(function () {
+					function openTarget() {
+						var el = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+						for (; el; el = el.parentElement) if (el.tagName === 'DETAILS') el.open = true;
+					}
+					window.addEventListener('hashchange', openTarget);
+					openTarget();
+					document.querySelectorAll('details.md-section').forEach(function (d) {
+						d.addEventListener('toggle', function () {
+							if (d.open) d.querySelectorAll('.CodeMirror').forEach(function (cm) { if (cm.CodeMirror) cm.CodeMirror.refresh(); });
+						});
+					});
+				})();
+			</script>
 
 	</body>
 </html>

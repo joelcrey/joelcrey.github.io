@@ -126,3 +126,27 @@ details.cv-section { margin-bottom: 1.5em; }
 		height: 24em;
 	}
 }
+
+/* Back button above the title of posts and research pages (_includes/back-link.html) */
+.back-link {
+	display: inline-block;
+	margin: 0 0 1.5em 0;
+	padding: 0.25em 0.9em;
+	border: solid 1px rgba(210, 215, 217, 0.75);
+	border-bottom: solid 1px rgba(210, 215, 217, 0.75);
+	border-radius: 0.375em;
+	color: #7f888f;
+	font-family: "Roboto Slab", serif;
+	font-size: 0.75em;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+	.back-link:hover { border-color: #5690f3; color: #5690f3 !important; }
+
+/* Collapsible sections in Markdown pages (_plugins/collapsible_sections.rb) */
+details.md-section { margin-bottom: 1em; }
+	details.md-section > summary { cursor: pointer; list-style: none; }
+	details.md-section > summary::-webkit-details-marker { display: none; }
+	details.md-section > summary > * { display: inline-block; margin-bottom: 1em; }
+	details.md-section > summary > *::after { content: " +"; color: #5690f3; }
+	details.md-section[open] > summary > *::after { content: " −"; }
