@@ -164,3 +164,7 @@ details.md-section { margin-bottom: 1em; }
 		font-size: 1.75em;
 	}
 }
+
+/* Email line under the introduction on the homepage */
+#banner .banner-contact { margin-top: -0.5em; }
+	#banner .banner-contact .icon { color: #5690f3; margin-right: 0.3em; }
