@@ -1,6 +1,6 @@
 # Collapsible sections: with `collapsible: true` in the front matter of a page or post, every
-# section under a heading of the top level used in it (## or ###) becomes a block that opens and
-# closes by clicking its title. `collapsible: closed` starts them closed.
+# section under a heading of the largest level used in it (# if there is one, else ## or ###) becomes
+# a block that opens and closes by clicking its title; smaller headings stay inside it. `collapsible: closed` starts them closed.
 #
 # The Markdown itself does not change, so the file still reads normally in Obsidian.
 

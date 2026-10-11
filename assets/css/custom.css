@@ -150,3 +150,17 @@ details.md-section { margin-bottom: 1em; }
 	details.md-section > summary > * { display: inline-block; margin-bottom: 1em; }
 	details.md-section > summary > *::after { content: " +"; color: #5690f3; }
 	details.md-section[open] > summary > *::after { content: " −"; }
+
+/* "# Heading" inside a page or post: a section title, smaller than the page title */
+#main .inner > section > h1,
+#main .inner > section > details.md-section > summary > h1 {
+	font-size: 2.25em;
+	margin-bottom: 0.75em;
+}
+
+@media screen and (max-width: 736px) {
+	#main .inner > section > h1,
+	#main .inner > section > details.md-section > summary > h1 {
+		font-size: 1.75em;
+	}
+}
