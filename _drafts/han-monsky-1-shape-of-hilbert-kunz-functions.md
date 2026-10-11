@@ -8,7 +8,7 @@ sage_preload: /notes/han-monsky/hilbert_kunz.py
 summary: The Hilbert–Kunz function is not eventually polynomial, not even quasi-polynomial. A tour of examples, and Han and Monsky's theorem on diagonal hypersurfaces.
 ---
 
-These notes are a (very) preliminary draft that explains the theory of the Hilbert–Kunz function and the F-signature function of the diagonal hypersurfaces, those of the form $x_1^{d_1}+\dots+x_n^{d_n}$, in any characteristic.
+These posts come from a very preliminary draft (in pdf below) that explains the theory of the Hilbert–Kunz function and the F-signature function of the diagonal hypersurfaces, those of the form $x_1^{d_1}+\dots+x_n^{d_n}$, in any characteristic.
 
 **Computations.** Some examples are followed by a short SageMath session, which you can run on this page. Click **Load hilbert_kunz.py** first, then **Run** on any cell. The cells share one Sage session.
 
