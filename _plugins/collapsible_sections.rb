@@ -1,6 +1,7 @@
 # Collapsible sections: with `collapsible: true` in the front matter of a page or post, every
-# section under a heading of the largest level used in it (# if there is one, else ## or ###) becomes
-# a block that opens and closes by clicking its title; smaller headings stay inside it. `collapsible: closed` starts them closed.
+# section under a `##` heading becomes a block that opens and closes by clicking its title.
+# `###` and smaller headings stay inside it; a `#` heading ends it and stays as it is.
+# `collapsible: closed` starts the blocks closed.
 #
 # The Markdown itself does not change, so the file still reads normally in Obsidian.
 
@@ -8,19 +9,20 @@ module CollapsibleSections
   HEADING = %r{<h([1-6])(\s[^>]*)?>.*?</h\1>}m
 
   def self.wrap(html, open)
-    levels = html.scan(HEADING).map { |level, _| level.to_i }
-    return html if levels.empty?
-    top = levels.min
     out = +""
     inside = false
     rest = html
     while (m = rest.match(HEADING))
       level = m[1].to_i
       out << m.pre_match
-      if level <= top
+      if level == 2
         out << "</details>\n" if inside
         out << %(<details class="md-section"#{open ? " open" : ""}><summary>#{m[0]}</summary>\n)
         inside = true
+      elsif level == 1
+        out << "</details>\n" if inside
+        out << m[0]
+        inside = false
       else
         out << m[0]
       end

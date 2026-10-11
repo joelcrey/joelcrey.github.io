@@ -85,10 +85,10 @@ literal dollar sign. A single line break is kept as a line break.
 
 ## Collapsible sections
 
-Add `collapsible: true` to the front matter of a post or research page and every section under
-its largest headings (`#`, or `##` / `###` if the page uses no `#`) opens and closes by clicking
-its title; smaller headings stay inside their section. `collapsible: closed` starts them closed.
-A `#` heading inside a page is shown as a section title, smaller than the page title. The Markdown stays the same, so it still
+Add `collapsible: true` to the front matter of a post or research page and every `##` section
+opens and closes by clicking its title; `###` and smaller headings stay inside it, and `#`
+headings stay as they are. `collapsible: closed` starts them closed. A `#` heading inside a
+page is shown as a section title, smaller than the page title. The Markdown stays the same, so it still
 reads normally in Obsidian.
 
 ## Preview locally
