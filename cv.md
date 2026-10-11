@@ -5,7 +5,7 @@ hide_title: true
 
 {% comment %} The CV is generated from cv/cv.xlsx by cv/build_cv.py. Edit the spreadsheet, not this page. {% endcomment %}
 
-<ul class="actions"><li><a href="{{ '/acadcv.pdf' | relative_url }}" class="button">Download CV (PDF)</a></li></ul>
+<ul class="actions"><li><a href="{{ '/acadcv.pdf' | relative_url }}" class="button">Short CV (PDF)</a></li></ul>
 
 {% for section in site.data.cv %}
 {% capture body %}{% if section.text %}<p>{{ section.text }}</p>{% else %}<ul>
