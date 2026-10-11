@@ -83,6 +83,14 @@ Same as Obsidian: `$x$` is inline, `$$x$$` is displayed (even mid-line), `\$` is
 literal dollar sign. A single line break is kept as a line break.
 (`_plugins/obsidian_math.rb` does the translation.)
 
+## Links between posts
+
+Obsidian links work: `[[file-name]]` links to the post or page in `file-name.md` (shown by its
+title), `[[file-name|some text]]` shows "some text", `[[file-name#Heading]]` goes to a heading
+(`[[#Heading]]` within the same page), and `![[picture.png]]` shows an image from the site. A
+post can be named with or without its date. A link to something not on the site, such as an
+unpublished draft, is shown as plain text. `k[[x]]` inside `$...$` is left as math.
+
 ## Collapsible sections
 
 Add `collapsible: true` to the front matter of a post or research page and every `##` section
