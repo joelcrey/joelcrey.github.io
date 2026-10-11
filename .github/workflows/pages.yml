@@ -33,6 +33,9 @@ jobs:
           bundler-cache: true
       - id: pages
         uses: actions/configure-pages@v5
+      # The Han–Monsky notes stay off the site until their posts are published (delete this step then).
+      # Locally they are still served, so the Sage cells in the drafts keep working.
+      - run: rm -rf notes/han-monsky
       - run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
