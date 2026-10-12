@@ -48,7 +48,7 @@ Introducing this theory allows us to compute the generating functions of the lim
 Note that $n=1$, the $A_1$ row gives $F_g(z)=\sec z+\tan z$, recovering the formula by Gessel and Monsky.
 
 ## The $h$-functions of the $A_n$ singularities and Euler polynomials
-As we already hinted above, one can show that the integral equation for $h$-function mentioned above that the limit $h$-functions of the ADE singularities are piecewise polynomials in $\mathbb{Q}[x]$, with only finitely many breakpoints (more general $h$-function may be piecewise polynomials with countably many breakpoints).
+As we already hinted above, one can show that the limit $h$-functions of the ADE singularities are piecewise polynomials in $\mathbb{Q}[x]$, with only finitely many breakpoints (more general $h$-function may be piecewise polynomials with countably many breakpoints).
 
 In the case of the $A_n$ singularities, a closed form for these polynomials in terms of the dimension, and the parameter $n$, can be provided using the right basis of $\mathbb{Q}[x]$: the Euler polynomials. The [Euler polynomials](https://mathworld.wolfram.com/EulerPolynomial.html) are a set of polynomials given by the series $\dfrac{2e^{xz}}{e^z+1}=\sum_{k\ge0}E_k(x)\dfrac{z^k}{k!}$ which are important to combinatorics and number theory, and form a $\mathbb{Q}$-basis in $\mathbb{Q}[x]$ (not to confuse with the [Eulerian polynomials](https://oeis.org/wiki/Eulerian_polynomials), are also important in these fields, and also show in the proof of Gessel and Monsky's formula in a different way).
 
