@@ -2,7 +2,7 @@
 #   [[note]]                 link to the post or page whose file is note.md, shown by its title
 #   [[note|text]]            the same, shown as "text"
 #   [[note#Heading]]         link to a heading of that note ([[#Heading]] for this note)
-#   ![[picture.png]]         an image anywhere in the site
+#   ![[picture.png]]         an image anywhere in the site (![[picture.png|300]]: 300 pixels wide)
 #   [text](note.md)          Obsidian's Markdown-style links to notes work too
 #
 # Notes are found by file name (with or without the date of a post, or with a folder path).
@@ -90,7 +90,13 @@ module ObsidianLinks
     def image(target, label)
       f = files[target.downcase] || files[File.basename(target).downcase]
       return escape(target) unless f
-      "![#{escape(label.to_s)}](#{baseurl}#{f.relative_path.sub(%r{\A/?}, '/')})"
+      src = "#{baseurl}#{f.relative_path.sub(%r{\A/?}, '/')}"
+      # ![[picture.png|300]] or ![[picture.png|300x200]] sets the size, as in Obsidian
+      if (size = label.to_s.match(/\A(\d+)(?:x(\d+))?\z/))
+        attrs = %( width="#{size[1]}") + (size[2] ? %( height="#{size[2]}") : "")
+        return "![](#{src}){:#{attrs}}"
+      end
+      "![#{escape(label.to_s)}](#{src})"
     end
 
     # Escape Markdown in link text, but not inside its math

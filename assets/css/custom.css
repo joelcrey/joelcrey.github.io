@@ -176,3 +176,6 @@ h3 { font-size: 1.1em; }
 	#main .inner > section > h1,
 	#main .inner > section > details.md-section > summary > h1 { font-size: 1.4em; }
 }
+
+/* Images in posts and pages never wider than the text */
+#main .inner > section img { max-width: 100%; height: auto; }
