@@ -156,23 +156,23 @@ body, input, select, textarea { color: #4f575c; }
 
 /* Smaller headings than the theme's: page titles and section titles (a "# Heading" inside a
    page is a section title, smaller than the page title) */
-#main header.main > h1 { font-size: 3em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.15em; }
+#main header.main > h1 { font-size: 2.4em; }
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.1em; }
 #main .inner > section > h1,
-#main .inner > section > details.md-section > summary > h1 { font-size: 1.85em; }
+#main .inner > section > details.md-section > summary > h1 { font-size: 1.6em; }
 
 @media screen and (max-width: 1680px) {
-	#main header.main > h1 { font-size: 2.75em; }
+	#main header.main > h1 { font-size: 2.25em; }
 }
 
 @media screen and (max-width: 980px) {
-	#main header.main > h1 { font-size: 2.5em; }
+	#main header.main > h1 { font-size: 2.1em; }
 }
 
 @media screen and (max-width: 736px) {
-	#main header.main > h1 { font-size: 1.75em; }
-	h2 { font-size: 1.3em; }
+	#main header.main > h1 { font-size: 1.6em; }
+	h2 { font-size: 1.2em; }
 	#main .inner > section > h1,
-	#main .inner > section > details.md-section > summary > h1 { font-size: 1.5em; }
+	#main .inner > section > details.md-section > summary > h1 { font-size: 1.4em; }
 }
