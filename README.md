@@ -36,9 +36,13 @@ Everything in the CV comes from `cv/cv.xlsx`:
   Education, Visits, Organization and Events with a place listed here gets a pin; entries that have
   not ended yet show as upcoming. The build script names any place missing from this sheet.
 
-When you push, GitHub regenerates the CV page and `acadcv.pdf`. To see the result locally first:
+After editing the spreadsheet (or `cv/acadcv.tex`), run this and commit the result, including `acadcv.pdf`:
 
     python3 cv/build_cv.py --pdf      # needs LuaLaTeX; without --pdf only the web page is updated
+
+GitHub regenerates the web CV when you push, but uses the committed `acadcv.pdf` instead of compiling
+it (which would make every deploy a minute slower). If the spreadsheet changed what goes in the PDF and
+the PDF was not rebuilt, the deploy stops with a message saying so.
 
 Name, title and contact details are in `cv/acadcv.tex`, which also sets the style.
 

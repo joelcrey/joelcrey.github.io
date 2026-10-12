@@ -19,14 +19,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # The CV page data and the CV PDF are generated from cv/cv.xlsx
+      # The CV page data is regenerated from cv/cv.xlsx. The CV PDF is not compiled here: the committed
+      # acadcv.pdf is used, made locally with `python3 cv/build_cv.py --pdf`. If the spreadsheet changed
+      # what goes in the PDF without that, cv/sections.tex comes out different and the deploy stops.
       - run: python3 cv/build_cv.py
-      - uses: xu-cheng/latex-action@v3
-        with:
-          root_file: acadcv.tex
-          working_directory: cv
-          latexmk_use_lualatex: true
-      - run: cp cv/acadcv.pdf acadcv.pdf
+      - name: Check that acadcv.pdf is up to date
+        run: |
+          git diff --quiet -- cv/sections.tex || {
+            echo "::error::The CV PDF is out of date with cv/cv.xlsx. Run 'python3 cv/build_cv.py --pdf' and commit acadcv.pdf."
+            exit 1
+          }
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
