@@ -1,0 +1,6 @@
+{
+    // The CV is built by `python3 cv/build_cv.py --pdf`. Without this, LaTeX Workshop recompiles
+    // cv/acadcv.tex every time the script rewrites cv/sections.tex, and the two builds collide.
+    // You can still compile by hand from the editor (it uses LuaLaTeX, see the top of acadcv.tex).
+    "latex-workshop.latex.autoBuild.run": "never"
+}

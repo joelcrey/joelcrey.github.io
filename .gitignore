@@ -13,3 +13,4 @@ cv/*.out
 cv/*.fls
 cv/*.fdb_latexmk
 cv/acadcv.pdf
+cv/acadcv.synctex.gz

@@ -286,8 +286,15 @@ def build_map(sheets):
 
 
 def build_pdf():
-    subprocess.run(["latexmk", "-lualatex", "-interaction=nonstopmode", "-halt-on-error", "acadcv.tex"],
-                   cwd=CV_DIR, check=True, stdout=subprocess.DEVNULL)
+    latexmk = ["latexmk", "-lualatex", "-interaction=nonstopmode", "-halt-on-error", "acadcv.tex"]
+    run = lambda cmd: subprocess.run(cmd, cwd=CV_DIR, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if run(latexmk).returncode != 0:
+        # Leftovers of another compilation (e.g. pdfLaTeX from an editor) can break the build: clean, retry
+        run(["latexmk", "-C", "acadcv.tex"])
+        if run(latexmk).returncode != 0:
+            log = (CV_DIR / "acadcv.log").read_text(errors="replace").splitlines()
+            errors = [l for l in log if l.startswith("!") or ":error" in l or "error:" in l] or log[-15:]
+            sys.exit("LaTeX failed on cv/acadcv.tex (full log in cv/acadcv.log):\n" + "\n".join(errors[:10]))
     shutil.copy(CV_DIR / "acadcv.pdf", ROOT / "acadcv.pdf")
     print("wrote acadcv.pdf")
 
