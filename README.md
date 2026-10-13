@@ -24,7 +24,8 @@ Everything in the CV comes from `cv/cv.xlsx`:
 - **Sections** sheet: the sections, in order. `type` is `list` (entries from the sheet with the same
   name), `events` (rows of the Events sheet with the given `contribution`) or `text` (the `text`
   column). `web`/`pdf` say where the section appears; `details_in_pdf: no` hides talk titles (or the
-  `details` column) in the PDF; `web_collapsed: yes` makes the section collapsible (closed) on the web page.
+  `details` column) in the PDF; `web_collapsed: yes` makes the section collapsible (closed) on the web page. `pdf_title` gives the
+  section a different title in the PDF (blank: the same as on the web).
 - **Events** sheet: every conference, workshop, seminar or school, one row each. `contribution` is
   `invited talk`, `talk`, `poster` or `attended` (blank means attended), and `title` is the title of
   your talk or poster. The CV puts each event in Invited Talks, Other talks, Posters or Conferences

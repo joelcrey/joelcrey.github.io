@@ -184,11 +184,12 @@ def build():
         if not name or kind not in ("list", "text", "events"):
             continue
         show_web, show_pdf = yes(s.get("web", "")), yes(s.get("pdf", ""))
+        pdf_name = s.get("pdf_title", "") or name          # the PDF may title the section differently
         if kind == "text":
             if show_web:
                 web_sections.append({"title": name, "text": web(s.get("text", ""))})
             if show_pdf:
-                tex_lines += [r"\section{%s}" % tex_escape(name), tex(s.get("text", "")), ""]
+                tex_lines += [r"\section{%s}" % tex_escape(pdf_name), tex(s.get("text", "")), ""]
             continue
         if kind == "events":
             wanted = s.get("contribution", "").strip().lower() or "attended"
@@ -208,7 +209,7 @@ def build():
             web_sections.append({"title": name, "items": web_rows,
                                  "collapsed": yes(s.get("web_collapsed", ""), default=False)})
         if show_pdf and pdf_rows:
-            tex_lines.append(r"\section{%s}" % tex_escape(name))
+            tex_lines.append(r"\section{%s}" % tex_escape(pdf_name))
             details = yes(s.get("details_in_pdf", ""))
             tex_lines += [tex_entry(e, details) for e in pdf_rows] + [""]
 
