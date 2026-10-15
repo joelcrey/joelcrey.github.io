@@ -11,13 +11,13 @@ collapsible: closed
 
 Let $R_{p,d} := \mathbb{F}_p[[x_0,\dots,x_d]]/(x_0^2+\dots+x_d^2)$ the ring of formal series at the origin of an ordinary double point of characteristic $p$.
 
-**Conjecture (Watanabe–Yoshida, 2005).** Let $(R,\mathfrak{m},k)$ be an unmixed nonregular local ring of characteristic $p>0$. Then, $e_\text{HK}(R)\geq e_\text{HK}(R_{p,d})\geq 1+c_d.$ Furthermore, if the first equality holds, then $\widehat{R} \cong k[[x_0,\dots,x_d]]/(x_0^2+\dots+x_d^2)$.
+**Conjecture (Watanabe–Yoshida, 2005).** Let $(R,\mathfrak{m},k)$ be an unmixed nonregular local ring of characteristic $p>2$. Then, $e_\text{HK}(R)\geq e_\text{HK}(R_{p,d})\geq 1+c_d.$ Furthermore, if the first equality holds, then $\widehat{R} \cong k[[x_0,\dots,x_d]]/(x_0^2+\dots+x_d^2)$.
 
-The Watanabe–Yoshida conjecture thus roughly states that the $A_1$ singularity attains the infimum of the Hilbert–Kunz multiplicity, and is the only one to do so. The first part of the statement was known to be true for complete intersections and for unmixed local rings of dimension up to 7, always in characteristic $p>2$. 
+The Watanabe–Yoshida conjecture thus roughly states that the $A_1$ singularity attains the infimum of the Hilbert–Kunz multiplicity, and is the only one to do so. The first part of the statement was known to be true for complete intersections and for unmixed local rings of dimension up to 7, but these miss the stronger part of the statement, as well as characteristic 2. By passing to the limit when $p\rightarrow \infty$, one may even consider the characteristic $0$ version of the statement.
 
-**About the solution of the known cases.** A variety of techniques come into these solutions, mainly from deformation theory and local algebra, used to understand rings with small Hilbert–Kunz multiplicity. The cases up to dimension 7 were solved by Watanabe–Yoshida, Aberbach–Enescu, Enescu–Shimomoto and Aberbach–Cox-Steib in a series of papers from 2002 through 2023, and follow from a wonderful interplay between a careful analysis of lower bounds, local algebra and deformation theory arguments.
+**About the solution of the known cases.** A variety of techniques come into these solutions. The cases up to dimension 7 and complete intersections were settled by Watanabe–Yoshida, Aberbach–Enescu, Enescu–Shimomoto and Aberbach–Cox-Steib in a series of papers from 2002 to 2023, and follow from a wonderful interplay between a careful analysis of lower bounds, local algebra and deformation theory arguments.
 
-In this project, I settle the stronger part of the statement in complete intersections, and dimension up to 7, all of them including the cases of characteristic 2 and 0.
+In this project, I contribute to this program with the strong form of the conjecture for complete intersections, and dimension up to 7, as well as characteristic 2 and 0 versions of the statements.
 
 ## On the Strong Watanabe–Yoshida conjecture
 

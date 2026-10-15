@@ -22,20 +22,6 @@
             }
           },
           {
-            "id": "de339a04165c9c04",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_research/limit_f_invariants_ade.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "limit_f_invariants_ade"
-            }
-          },
-          {
             "id": "f91d496be638c194",
             "type": "leaf",
             "state": {
@@ -50,7 +36,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -217,6 +203,11 @@
   "active": "f91d496be638c194",
   "lastOpenFiles": [
     "_research/limit_f_invariants_ade.md",
+    "_site/some_binomials.png",
+    "some_binomials.png",
+    "_site/A_1_dim1through6.png",
+    "A_1_dim1through6.png",
+    "aboutme.md",
     "_research/watanabe-yoshida.md",
     "_drafts/zz-link-test.md",
     "_plugins/obsidian_links.rb",
@@ -241,7 +232,6 @@
     "_drafts/han-monsky-3-the-algorithm.md",
     "_drafts/han-monsky-2-the-han-monsky-ring.md",
     "research.md",
-    "cv.md",
-    "aboutme.md"
+    "cv.md"
   ]
 }
