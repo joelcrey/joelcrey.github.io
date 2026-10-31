@@ -39,7 +39,7 @@ Everything in the CV comes from `cv/cv.xlsx`:
 
 After editing the spreadsheet (or `cv/acadcv.tex`), run this and commit the result, including `acadcv.pdf`:
 
-    python3 cv/build_cv.py --pdf      # needs LuaLaTeX; without --pdf only the web page is updated
+    python3 cv/build_cv.py            # needs LuaLaTeX; with --no-pdf only the web data is updated
 
 GitHub regenerates the web CV when you push, but uses the committed `acadcv.pdf` instead of compiling
 it (which would make every deploy a minute slower). If the spreadsheet changed what goes in the PDF and

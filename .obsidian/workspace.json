@@ -25,14 +25,12 @@
             "id": "f91d496be638c194",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "_research/watanabe-yoshida.md",
-                "mode": "source",
-                "source": false
+                "file": "some_binomials.png"
               },
-              "icon": "lucide-file",
-              "title": "watanabe-yoshida"
+              "icon": "lucide-image",
+              "title": "some_binomials"
             }
           }
         ],
@@ -202,13 +200,15 @@
   },
   "active": "f91d496be638c194",
   "lastOpenFiles": [
+    "A_1_dim1through6.png",
+    "acadcv.pdf",
+    "research.md",
+    "_research/watanabe-yoshida.md",
     "_research/limit_f_invariants_ade.md",
     "_site/some_binomials.png",
     "some_binomials.png",
     "_site/A_1_dim1through6.png",
-    "A_1_dim1through6.png",
     "aboutme.md",
-    "_research/watanabe-yoshida.md",
     "_drafts/zz-link-test.md",
     "_plugins/obsidian_links.rb",
     "README.md",
@@ -221,7 +221,6 @@
     "cv/__pycache__/build_cv.cpython-313.pyc",
     "cv/__pycache__",
     "cv/acadcv.out",
-    "cv/acadcv.log",
     "math.md",
     "_drafts/example-math-post.md",
     "_research/han-monsky.md",
@@ -231,7 +230,6 @@
     "_drafts/han-monsky-4-f-signature.md",
     "_drafts/han-monsky-3-the-algorithm.md",
     "_drafts/han-monsky-2-the-han-monsky-ring.md",
-    "research.md",
     "cv.md"
   ]
 }

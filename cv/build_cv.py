@@ -1,7 +1,7 @@
 """Build the CV web page data and the PDF from cv/cv.xlsx.
 
-    python3 cv/build_cv.py          # writes _data/cv.json and cv/sections.tex
-    python3 cv/build_cv.py --pdf    # also compiles cv/acadcv.tex and copies it to acadcv.pdf
+    python3 cv/build_cv.py            # writes _data/cv.json and cv/sections.tex, then compiles the PDF
+    python3 cv/build_cv.py --no-pdf   # only the data files, without compiling cv/acadcv.tex
 
 In cv.xlsx, the "Sections" sheet lists the sections in order. A section of type "list" takes its
 rows from the sheet with the same name, listed oldest first (the CV shows them newest first); one of
@@ -301,5 +301,5 @@ def build_pdf():
 
 if __name__ == "__main__":
     build()
-    if "--pdf" in sys.argv:
+    if "--no-pdf" not in sys.argv:
         build_pdf()
