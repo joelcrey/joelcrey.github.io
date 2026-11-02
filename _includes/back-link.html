@@ -1,8 +1,8 @@
-<!-- Back button: research pages go back to Research, math posts to Math thoughts, other posts home -->
+<!-- Back button: research pages go back to Research, math posts to Math stuff, other posts home -->
 {% if page.collection == 'research' %}
 	{% assign back_url = '/research.html' %}{% assign back_label = 'Research' %}
 {% elsif page.collection == 'posts' and page.categories contains 'math' %}
-	{% assign back_url = '/math.html' %}{% assign back_label = 'Math thoughts' %}
+	{% assign back_url = '/math.html' %}{% assign back_label = 'Math stuff' %}
 {% elsif page.collection == 'posts' %}
 	{% assign back_url = '/' %}{% assign back_label = 'Home' %}
 {% endif %}

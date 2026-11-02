@@ -1,5 +1,5 @@
 ---
-title: Math thoughts
+title: Math stuff
 ---
 
 {% comment %}
@@ -29,7 +29,7 @@ in part order, where the series first appears.
 	{% else %}
 	<article>
 		<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-		<p>{{ post.date | date: "%-d %B %Y" }}{% if post.summary %} · {{ post.summary }}{% endif %}</p>
+		{% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
 	</article>
 	{% endif %}
 {% endfor %}

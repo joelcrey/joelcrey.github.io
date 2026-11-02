@@ -10,6 +10,7 @@ Personal website, built with Jekyll. Edit Markdown, push to `main`, and the GitH
 | CV (web page and PDF)     | `cv/cv.xlsx`, see below                  |
 | Research intro            | `research.md`                            |
 | A research project        | `_research/<any name>.md`                |
+| Timeline page             | `Cronology.canvas`, see below            |
 | About me                  | `aboutme.md`                             |
 | Homepage banner           | `index.html`                             |
 | Top menu                  | `_includes/header.html`                  |
@@ -47,11 +48,35 @@ the PDF was not rebuilt, the deploy stops with a message saying so.
 
 Name, title and contact details are in `cv/acadcv.tex`, which also sets the style.
 
+## Updating the timeline
+
+The timeline post (`_drafts/history-of-commutative-algebra.md`) comes from the Obsidian canvas `A PhD/Cronology.canvas`, which is
+not in this repository. After editing the canvas, run this and commit `_data/timeline.json`:
+
+    python3 timeline/build_timeline.py
+
+Only cards with a year are published (`1868. ...` or `..., 2001`), and not those that look like notes
+to self: with a question mark, in Spanish, starting with `*`, or very long. The script lists what it
+held back. Everything else is in `timeline/timeline.toml`:
+
+- `include` / `exclude`: the beginning of a card's text, to publish or hide it by hand.
+- `[place]`: the group of a card that is not inside any group on the canvas.
+- `[links]`: a public link (DOI, arXiv) for each file the canvas links to; without one the title
+  is plain text. The script lists the files still missing.
+- `[[fields]]`: the fields on the page, each grouping some canvas groups, with a colour. Cards in a
+  group that is in no field are left out, and the script says so.
+
+The post is a draft for now: it shows with `jekyll serve --drafts` but is not put online. To publish
+it, move it to `_posts/` as `YYYY-MM-DD-history-of-commutative-algebra.md`, like any other post.
+
+On the page, each canvas group is a box and arrows between cards become links. On phones only the
+list view is shown. The "last updated" date changes only when the entries do.
+
 ## Writing a post
 
 1. Copy `_drafts/example-math-post.md` into `_posts/` as `YYYY-MM-DD-short-title.md`.
 2. Set `title`, `category` (`math` or `thoughts`) and optionally `summary` / `image`.
-3. Push. It appears on the Math thoughts page (`math.html`) and the homepage, at `/posts/short-title.html`.
+3. Push. It appears on the Math stuff page (`math.html`) and the homepage, at `/posts/short-title.html`.
 
 Drafts in `_drafts/` are never published.
 

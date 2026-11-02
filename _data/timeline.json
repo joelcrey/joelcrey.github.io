@@ -1,0 +1,549 @@
+{
+ "updated": "2026-11-02",
+ "fields": [
+  {
+   "name": "Invariants & ideals",
+   "color": "#e0715a"
+  },
+  {
+   "name": "Modern algebra",
+   "color": "#d39b2a"
+  },
+  {
+   "name": "Local rings & duality",
+   "color": "#3aa38a"
+  },
+  {
+   "name": "Perfect ideals & linkage",
+   "color": "#5690f3"
+  },
+  {
+   "name": "Hilbert–Kunz theory",
+   "color": "#a66bd3"
+  },
+  {
+   "name": "F-singularities",
+   "color": "#d1608e"
+  }
+ ],
+ "entries": [
+  {
+   "id": "4237ae275df247b6",
+   "year": 1868,
+   "title": "Gordon's solution of f.g.ness of invariants of binary forms",
+   "note": "\"King of Invariants\" (see David W Lewis on Hilbert)",
+   "group": "Hilbert and Invariant theory",
+   "field": 0,
+   "leads_to": []
+  },
+  {
+   "id": "d6700decd5fb70bf",
+   "year": 1873,
+   "title": "Max Noether's problem and $AF+BG$ theorem",
+   "note": "",
+   "group": "Gordan's problem and primary decomposition",
+   "field": 0,
+   "leads_to": [
+    "a4a1d1b51840e938",
+    "e3ebadf25e6db6f6"
+   ]
+  },
+  {
+   "id": "a4a1d1b51840e938",
+   "year": 1885,
+   "title": "Netto's solution for curves",
+   "note": "",
+   "group": "Gordan's problem and primary decomposition",
+   "field": 0,
+   "leads_to": [
+    "e3ebadf25e6db6f6"
+   ]
+  },
+  {
+   "id": "e3ebadf25e6db6f6",
+   "year": 1890,
+   "title": "**Hilbert's claims in his paper**",
+   "note": "generalizable to $n$ dimensions (According to Gray, Lasker and Hilbert were not really able to interact, so it is uncertain why Lasker ended up working on this)",
+   "group": "Gordan's problem and primary decomposition",
+   "field": 0,
+   "leads_to": [
+    "0327d2dae105ff67",
+    "f12a7292a9b2a7e9"
+   ]
+  },
+  {
+   "id": "e58d81f8eaf0d6f7",
+   "year": 1890,
+   "title": "Hilbert's solution to Invariant Theory. \"Existence solution\"",
+   "note": "",
+   "group": "Hilbert and Invariant theory",
+   "field": 0,
+   "leads_to": [
+    "ae93c41bf147d34d",
+    "e3ebadf25e6db6f6"
+   ]
+  },
+  {
+   "id": "f12a7292a9b2a7e9",
+   "year": 1893,
+   "title": "Hilbert's constructive proof",
+   "note": "",
+   "group": "Hilbert and Invariant theory",
+   "field": 0,
+   "leads_to": [
+    "ae93c41bf147d34d"
+   ]
+  },
+  {
+   "id": "f3d45f512ca732ab",
+   "year": 1900,
+   "title": "Noether starts attending lectures at the university of Erlangen",
+   "note": "",
+   "group": "Noether's algebra life",
+   "field": 1,
+   "leads_to": []
+  },
+  {
+   "id": "0327d2dae105ff67",
+   "year": 1905,
+   "title": "Lasker's proof of decomposability as intersection of primary ideals",
+   "note": "",
+   "group": "Gordan's problem and primary decomposition",
+   "field": 0,
+   "leads_to": [
+    "a09531f4beb4cef7",
+    "ae93c41bf147d34d"
+   ]
+  },
+  {
+   "id": "a09531f4beb4cef7",
+   "year": 1913,
+   "title": "Macaulay's work on algorithmically computing these decompositions",
+   "note": "",
+   "group": "Macaulay's algebra life",
+   "field": 1,
+   "leads_to": [
+    "99d64a13d0a6167a",
+    "ae93c41bf147d34d"
+   ]
+  },
+  {
+   "id": "c7aa70dc8a951e27",
+   "year": 1916,
+   "title": "Macaulay's \"Tract\"",
+   "note": "",
+   "group": "Macaulay's algebra life",
+   "field": 1,
+   "leads_to": []
+  },
+  {
+   "id": "ae93c41bf147d34d",
+   "year": 1920,
+   "title": "Noether's *Idealtheorie*",
+   "note": "",
+   "group": "Noether's algebra life",
+   "field": 1,
+   "leads_to": [
+    "7443a866be9c1a04",
+    "99d64a13d0a6167a"
+   ]
+  },
+  {
+   "id": "99d64a13d0a6167a",
+   "year": 1926,
+   "title": "Hermann's proof of what he calls _Heltzelt's Nullstellensatz_",
+   "note": "",
+   "group": "Gordan's problem and primary decomposition",
+   "field": 0,
+   "leads_to": []
+  },
+  {
+   "id": "7443a866be9c1a04",
+   "year": 1926,
+   "title": "Noether's *Aufbau*",
+   "note": "",
+   "group": "Noether's algebra life",
+   "field": 1,
+   "leads_to": [
+    "a66a146365cf7611"
+   ]
+  },
+  {
+   "id": "a66a146365cf7611",
+   "year": 1930,
+   "title": "Van der Waerden's *Modern Algebra*",
+   "note": "",
+   "group": "Noether's algebra life",
+   "field": 1,
+   "leads_to": []
+  },
+  {
+   "id": "96319b3239175902",
+   "year": 1935,
+   "title": "Noether dies",
+   "note": "",
+   "group": "Noether's algebra life",
+   "field": 1,
+   "leads_to": []
+  },
+  {
+   "id": "92d203447eff1b0c",
+   "year": 1943,
+   "title": "Chevalley's *On the theory of local rings*",
+   "note": "May be the origin of the term \"noetherian ring\"",
+   "group": "Regular local rings",
+   "field": 2,
+   "leads_to": []
+  },
+  {
+   "id": "3a18008a64a2008f",
+   "year": 1947,
+   "title": "Zariski's characterisation of regularity with local rings",
+   "note": "",
+   "group": "Regular local rings",
+   "field": 2,
+   "leads_to": []
+  },
+  {
+   "id": "6e04948deb0b8010",
+   "year": 1953,
+   "title": "Injective hulls",
+   "note": "",
+   "group": "Duality theory in CA and AG",
+   "field": 2,
+   "leads_to": [
+    "0c484e70099bef7a"
+   ]
+  },
+  {
+   "id": "0c484e70099bef7a",
+   "year": 1958,
+   "title": "Matlis duality",
+   "note": "",
+   "group": "Duality theory in CA and AG",
+   "field": 2,
+   "leads_to": [
+    "6658ff13d7dc06dc"
+   ]
+  },
+  {
+   "id": "d1372ee390a10636",
+   "year": 1961,
+   "title": "Local duality",
+   "note": "",
+   "group": "Duality theory in CA and AG",
+   "field": 2,
+   "leads_to": [
+    "b08eea9b1b1a5b84"
+   ]
+  },
+  {
+   "id": "6658ff13d7dc06dc",
+   "year": 1963,
+   "title": "The Ubiquity of Gorenstein ideals, Hymann Bass",
+   "note": "",
+   "group": "Structure Theory of Perfect Ideals",
+   "field": 3,
+   "leads_to": [
+    "7b57597b88e1ddfe"
+   ]
+  },
+  {
+   "id": "46b2865dc7fba88d",
+   "year": 1967,
+   "title": "Jean-Louis Verdier. “**Des catégories dérivées** des catégories abéliennes”",
+   "note": "French. PhD thesis. Université de Paris, 1967.",
+   "group": "Duality theory in CA and AG",
+   "field": 2,
+   "leads_to": []
+  },
+  {
+   "id": "c6b3881ff9b20b37",
+   "year": 1968,
+   "title": "Hilbert–Burch Theorem. Structure of perfect grade 2 ideals",
+   "note": "",
+   "group": "Structure Theory of Perfect Ideals",
+   "field": 3,
+   "leads_to": []
+  },
+  {
+   "id": "b83d495902cacc42",
+   "year": 1969,
+   "title": "Kunz's theorem",
+   "note": "",
+   "group": "Hilbert–Kunz theory",
+   "field": 4,
+   "leads_to": [
+    "df6b948581957376"
+   ]
+  },
+  {
+   "id": "7b57597b88e1ddfe",
+   "year": 1973,
+   "title": "Gorenstein Grade 3 ideals have odd number of generators. J. Watanabe",
+   "note": "",
+   "group": "Structure Theory of Perfect Ideals",
+   "field": 3,
+   "leads_to": [
+    "0739345a118211e9"
+   ]
+  },
+  {
+   "id": "44587df27aa5ce46",
+   "year": 1974,
+   "title": "Liaison des varietes algebriques - Peskine and Szpiro",
+   "note": "",
+   "group": "Modern Linkage/Liaison Theory",
+   "field": 3,
+   "leads_to": [
+    "077df37da6793d6a"
+   ]
+  },
+  {
+   "id": "b08eea9b1b1a5b84",
+   "year": 1977,
+   "title": "Sharp's conjecture",
+   "note": "",
+   "group": "Duality theory in CA and AG",
+   "field": 2,
+   "leads_to": [
+    "724ef746e649f141"
+   ]
+  },
+  {
+   "id": "0739345a118211e9",
+   "year": 1977,
+   "title": "Buchsbaum–Eisenbud theorem",
+   "note": "",
+   "group": "Structure Theory of Perfect Ideals",
+   "field": 3,
+   "leads_to": []
+  },
+  {
+   "id": "df6b948581957376",
+   "year": 1983,
+   "title": "Hilbert–Kunz function and multiplicity, Monsky",
+   "note": "",
+   "group": "Hilbert–Kunz theory",
+   "field": 4,
+   "leads_to": [
+    "a768a81f1e02312d"
+   ]
+  },
+  {
+   "id": "077df37da6793d6a",
+   "year": 1987,
+   "title": "Structure of Linkage",
+   "note": "",
+   "group": "Modern Linkage/Liaison Theory",
+   "field": 3,
+   "leads_to": []
+  },
+  {
+   "id": "af7a94a589e73037",
+   "year": 1988,
+   "title": "Tightly closed ideals, Hochster–Huneke",
+   "note": "",
+   "group": "Tight closure and F-singularities",
+   "field": 5,
+   "leads_to": []
+  },
+  {
+   "id": "a768a81f1e02312d",
+   "year": 1992,
+   "title": "Han–Monsky algorithm",
+   "note": "",
+   "group": "Han–Monsky theory",
+   "field": 4,
+   "leads_to": [
+    "11a4ea6990cb9cbd"
+   ]
+  },
+  {
+   "id": "54d473325972ef31",
+   "year": 2000,
+   "title": "Watanabe–Yoshida theorem and conjecture",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "70a712bb14402d85",
+    "81ff35d41ce10e7d",
+    "bc55497a9732e1f0"
+   ]
+  },
+  {
+   "id": "70a712bb14402d85",
+   "year": 2001,
+   "title": "Goto-Nakamura",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "a356171f87e67472"
+   ]
+  },
+  {
+   "id": "81ff35d41ce10e7d",
+   "year": 2001,
+   "title": "Watanabe–Yoshida in dimension 2",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "e039cfb4a19ce05e"
+   ]
+  },
+  {
+   "id": "724ef746e649f141",
+   "year": 2002,
+   "title": "Solution of Sharp's conjecture, Kawasaki",
+   "note": "",
+   "group": "Duality theory in CA and AG",
+   "field": 2,
+   "leads_to": []
+  },
+  {
+   "id": "a356171f87e67472",
+   "year": 2002,
+   "title": "Ciuperca-Enescu",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "8659d9293947ed8f"
+   ]
+  },
+  {
+   "id": "bc55497a9732e1f0",
+   "year": 2002,
+   "title": "Hanes' lower (e,d)-bounds and (e,d,µ)-bounds",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "8659d9293947ed8f"
+   ]
+  },
+  {
+   "id": "8659d9293947ed8f",
+   "year": 2004,
+   "title": "Blickle–Enescu's lower (p,d)-bound and (p,d,e)-bounds for regularity",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "6aab1db809992708",
+    "e039cfb4a19ce05e"
+   ]
+  },
+  {
+   "id": "11a4ea6990cb9cbd",
+   "year": 2004,
+   "title": "Monsky and Teixeira on p-fractals I and p-fractals II",
+   "note": "",
+   "group": "Han–Monsky theory",
+   "field": 4,
+   "leads_to": [
+    "a4eb48b7d44a0ee4"
+   ]
+  },
+  {
+   "id": "9d103abf19eb7dfa",
+   "year": 2005,
+   "title": "Enescu–Shimomoto theorem",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "6aab1db809992708"
+   ]
+  },
+  {
+   "id": "ad57302a8ca95c08",
+   "year": 2005,
+   "title": "Monsky on Mason's theorem and Syzygy gaps",
+   "note": "",
+   "group": "Han–Monsky theory",
+   "field": 4,
+   "leads_to": [
+    "a4eb48b7d44a0ee4"
+   ]
+  },
+  {
+   "id": "e039cfb4a19ce05e",
+   "year": 2005,
+   "title": "Watanabe–Yoshida in dimension 3",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "6aab1db809992708",
+    "9d103abf19eb7dfa"
+   ]
+  },
+  {
+   "id": "b54281be7808b7f2",
+   "year": 2006,
+   "title": "Hara on 2-dimensional smooth case",
+   "note": "",
+   "group": "F-pure thresholds",
+   "field": 5,
+   "leads_to": [
+    "a4eb48b7d44a0ee4"
+   ]
+  },
+  {
+   "id": "6aab1db809992708",
+   "year": 2008,
+   "title": "Aberbach–Enescu's lower d-bound for regularity",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "3d503bd4ad36fea2"
+   ]
+  },
+  {
+   "id": "a4eb48b7d44a0ee4",
+   "year": 2010,
+   "title": "Teixeira on Syzygy gaps",
+   "note": "",
+   "group": "Han–Monsky theory",
+   "field": 4,
+   "leads_to": []
+  },
+  {
+   "id": "3d503bd4ad36fea2",
+   "year": 2012,
+   "title": "Aberbach–Enescu's proof of WY conjecture for low dimension or multiplicity",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "91b514916951927d",
+    "b8e1201f38df415e"
+   ]
+  },
+  {
+   "id": "b8e1201f38df415e",
+   "year": 2012,
+   "title": "Celikbas–Dao–Huneke–Zhang",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": [
+    "3d503bd4ad36fea2"
+   ]
+  },
+  {
+   "id": "91b514916951927d",
+   "year": 2023,
+   "title": "Aberbach–Cox-Steib proof in dimension 7",
+   "note": "",
+   "group": "The Watanabe–Yoshida conjecture",
+   "field": 4,
+   "leads_to": []
+  }
+ ]
+}

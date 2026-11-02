@@ -1,0 +1,61 @@
+# Settings for the timeline page (timeline.md). After changing this file or the canvas, run
+#
+#     python3 timeline/build_timeline.py
+#
+# and commit _data/timeline.json. See README.md, "Updating the timeline".
+
+# The Obsidian canvas the timeline comes from, relative to this file.
+canvas = "../../A PhD/Cronology.canvas"
+
+# A card is published when it has a year and does not look like a private note (a question mark,
+# Spanish, a long comment, a comment starting with *). The build script lists what it held back.
+# To decide by hand, give the beginning of the card's text here (the date at the start, if any, included).
+include = []
+exclude = [
+  "Strong Watanabe–Yoshida conjecture for complete intersections",
+]
+
+# Cards that are not inside any group on the canvas, and the group they belong to on the page.
+[place]
+"1900. Noether starts" = "Noether's algebra life"
+"1926. Hermann" = "Gordan's problem and primary decomposition"
+"1943. Chevalley" = "Regular local rings"
+"Injective hulls" = "Duality theory in CA and AG"
+"[[matlis.pdf" = "Duality theory in CA and AG"
+
+# Public links for the files the canvas links to. A link with no entry here is shown as plain text,
+# and the build script lists those files.
+[links]
+# "watyostheorem00.pdf" = "https://doi.org/..."
+
+# The fields on the page, oldest first: each groups some of the canvas groups and has a colour.
+# Cards in a group that is in no field are left out (the build script says which).
+[[fields]]
+name = "Invariants & ideals"
+color = "#e0715a"
+groups = ["Hilbert and Invariant theory", "Gordan's problem and primary decomposition", "On the definition of ring"]
+
+[[fields]]
+name = "Modern algebra"
+color = "#d39b2a"
+groups = ["Noether's algebra life", "Macaulay's algebra life"]
+
+[[fields]]
+name = "Local rings & duality"
+color = "#3aa38a"
+groups = ["Regular local rings", "Duality theory in CA and AG"]
+
+[[fields]]
+name = "Perfect ideals & linkage"
+color = "#5690f3"
+groups = ["Structure Theory of Perfect Ideals", "Modern Linkage/Liaison Theory"]
+
+[[fields]]
+name = "Hilbert–Kunz theory"
+color = "#a66bd3"
+groups = ["Hilbert–Kunz theory", "Han–Monsky theory", "The Watanabe–Yoshida conjecture"]
+
+[[fields]]
+name = "F-singularities"
+color = "#d1608e"
+groups = ["Tight closure and F-singularities", "F-pure thresholds"]

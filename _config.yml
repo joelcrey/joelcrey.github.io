@@ -40,4 +40,5 @@ exclude:
   - assets/sass
   - .github
   - cv/
+  - timeline/
   - vendor

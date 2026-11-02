@@ -1,6 +1,6 @@
 ---
 title: An example math post
-category: math          # "math" → Math thoughts, "thoughts" → Thoughts
+category: math          # "math" → Math stuff, "thoughts" → Thoughts
 summary: One or two sentences shown on the homepage card.
 # image: /images/emmynoether.jpg   # optional picture for the homepage card
 ---

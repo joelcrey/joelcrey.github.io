@@ -1,0 +1,19 @@
+<!-- Timeline of commutative algebra. The data in _data/timeline.json comes from the Obsidian canvas (see timeline/build_timeline.py). -->
+{% assign updated = site.data.timeline.updated | date: "%B %Y" %}
+<div class="tl" id="tl">
+	<div class="tl-bar">
+		<span class="tl-seg" role="group" aria-label="View">
+			<button type="button" data-view="map" aria-pressed="true">Map</button>
+			<button type="button" data-view="list" aria-pressed="false">List</button>
+		</span>
+		<span class="tl-chips" id="tl-chips"></span>
+	</div>
+	<div class="tl-map" id="tl-map">
+		<div class="tl-row"><div class="tl-axis" id="tl-axis"></div><div class="tl-plane" id="tl-plane"></div></div>
+	</div>
+	<div class="tl-list" id="tl-list" hidden></div>
+	<div class="tl-detail" id="tl-detail" hidden></div>
+	<p class="tl-updated">{{ site.data.timeline.entries.size }} entries · last updated {{ updated }}</p>
+</div>
+<script>window.TIMELINE = {{ site.data.timeline | jsonify }};</script>
+<script src="{{ '/assets/js/timeline.js' | relative_url }}"></script>
