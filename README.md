@@ -105,7 +105,8 @@ works in the local preview) to the Sage session.
 ## Post series
 
 Add `series: <key>` and `series_part: <n>` to the posts, and describe the series (title, extra
-files) in `_data/series.yml`. Each post then shows a box linking all the parts.
+files, optional summary) in `_data/series.yml`. Each post then shows a box linking all the parts. On
+the Math stuff page the series is listed once, like a post, with its title linking to part 1.
 
 ## Math and line breaks
 

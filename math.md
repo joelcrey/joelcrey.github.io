@@ -3,8 +3,8 @@ title: Math stuff
 ---
 
 {% comment %}
-Lists the posts with `category: math`, newest first. The posts of a series are shown together,
-in part order, where the series first appears.
+Lists the posts with `category: math`, newest first. A series is shown once, where it first appears,
+with its title linking to part 1 (whose box lists all the parts and files).
 {% endcomment %}
 {% assign math_posts = site.posts | where_exp: "post", "post.categories contains 'math'" %}
 {% assign listed_series = "" %}
@@ -18,12 +18,8 @@ in part order, where the series first appears.
 			{% assign parts = math_posts | where: "series", post.series | sort: "series_part" %}
 			{% assign info = site.data.series[post.series] %}
 	<article>
-		<h3>{{ info.title | default: parts.first.title }}</h3>
-		<p>A series in {{ parts.size }} parts.{% if info.files %} {% for file in info.files %}<a href="{{ file.url | relative_url }}">{{ file.name }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}{% endif %}</p>
-		<ol>
-			{% for part in parts %}<li><a href="{{ part.url | relative_url }}">{{ part.title }}</a></li>
-			{% endfor %}
-		</ol>
+		<h3><a href="{{ parts.first.url | relative_url }}">{{ info.title | default: parts.first.title }}</a></h3>
+		<p>{% if info.summary %}{{ info.summary }} · {% endif %}A series in {{ parts.size }} parts.</p>
 	</article>
 		{% endunless %}
 	{% else %}
