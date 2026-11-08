@@ -1,0 +1,9 @@
+# Post series. A post joins one with `series: <key>` and `series_part: <n>` in its front matter.
+# Optional `summary`: one or two sentences shown under the series title on the Math stuff page.
+han-monsky:
+  title: The Hilbert–Kunz function and F-signature function of the diagonal hypersurfaces
+  files:
+    - name: Notes (PDF)
+      url: /notes/han-monsky/han_monsky.pdf
+    - name: hilbert_kunz.py (SageMath)
+      url: /notes/han-monsky/hilbert_kunz.py

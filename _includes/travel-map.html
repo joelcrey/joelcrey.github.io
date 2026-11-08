@@ -1,0 +1,49 @@
+<!-- Map of affiliations, talks and conferences. The data in _data/map.json comes from cv/cv.xlsx (see cv/build_cv.py). -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+	integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+	integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<div id="travel-map"></div>
+<ul id="travel-map-legend">
+	<li data-kind="current"><span class="dot current"></span> Current affiliation</li>
+	<li data-kind="affiliation"><span class="dot affiliation"></span> Past affiliation</li>
+	<li data-kind="trip"><span class="dot trip"></span> Talks, conferences and visits</li>
+	<li data-kind="upcoming"><span class="dot upcoming"></span> Upcoming</li>
+</ul>
+<script>
+	(function () {
+		var places = {{ site.data.map | jsonify }};
+		var colors = { current: "#2ca02c", affiliation: "#d62728", trip: "#1f77b4", upcoming: "#f1c40f" };
+		var order = ["upcoming", "current", "affiliation", "trip"];
+
+		// A map pin (circle on a point) in the given color; the anchor is the tip.
+		function pin(color) {
+			var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="30.75" viewBox="0 0 26 41">' +
+				'<path d="M24.08 18.79A12.5 12.5 0 1 0 1.92 18.79L13 40Z" fill="' + color + '" stroke="rgba(0,0,0,0.35)" stroke-width="1"/>' +
+				'<circle cx="13" cy="13" r="5.5" fill="#fff"/></svg>';
+			return L.divIcon({ html: svg, className: "map-pin", iconSize: [19.5, 30.75], iconAnchor: [9.75, 30], popupAnchor: [0, -27] });
+		}
+
+		// On narrow screens fitBounds zooms out so far that grey shows above and below the world.
+		var map = L.map("travel-map", { scrollWheelZoom: false, minZoom: window.innerWidth <= 736 ? 1 : 2 });
+		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+
+		var bounds = [];
+		places.forEach(function (p) {
+			var html = "<strong>" + p.place + "</strong><ul>" + p.items.map(function (it) {
+				return "<li>" + it.text + " <span class=\"when\">(" + it.date + ")</span></li>";
+			}).join("") + "</ul>";
+			L.marker([p.lat, p.lon], { icon: pin(colors[p.kind]), zIndexOffset: (order.length - order.indexOf(p.kind)) * 100 })
+				.addTo(map).bindPopup(html, { maxWidth: Math.min(320, window.innerWidth - 110), maxHeight: 200 });
+			bounds.push([p.lat, p.lon]);
+		});
+		map.fitBounds(bounds, { padding: [30, 30] });
+
+		// Only show the legend entries that some pin uses
+		document.querySelectorAll("#travel-map-legend li").forEach(function (li) {
+			if (!places.some(function (p) { return p.kind === li.dataset.kind; })) li.style.display = "none";
+		});
+	})();
+</script>

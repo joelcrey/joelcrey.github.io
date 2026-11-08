@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<!-- Banner -->
+	<section id="banner">
+		<div class="content">
+			<header>
+				<h1>Joel Castillo-Rey</h1>
+				<p>Fourth year graduate student</p>
+			</header>
+			<p>Since September 2022, I have been conducting my research at the <a href="https://www.bcamath.org/en">Basque Center for Applied Mathematics</a> (BCAM) in Bilbao under the supervision of Ilya Smirnov in the <a href="https://www.bcamath.org/en/research/areas/mp/stag">Singularity Theory and Algebraic Geometry</a> (STAG) group. My mathematical interests often lie between Commutative Algebra and Algebraic Geometry, and my research has been mainly focused in the study of singularities in positive characteristic. I am on the job market and available from January 2027!</p>
+			<p class="banner-contact"><span class="icon solid fa-envelope"></span> <a href="mailto:{{ site.email_institutional }}">{{ site.email_institutional }}</a></p>
+
+		</div>
+		<span class="image object">
+			<img src="{{ '/images/jcastillo.jpg' | relative_url }}" alt="" />
+		</span>
+	</section>
+
+{% if site.data.map.size > 0 %}
+<!-- Map -->
+	<section>
+		<header class="major">
+			<h2>Where I've been doing math</h2>
+		</header>
+		{% include travel-map.html %}
+	</section>
+{% endif %}
+
+{% if site.posts.size > 0 %}
+<!-- Latest posts -->
+	<section>
+		<header class="major">
+			<h2>Latest posts</h2>
+		</header>
+		<div class="posts">
+			{% for post in site.posts limit: 6 %}
+			<article>
+				{% if post.image %}<a href="{{ post.url | relative_url }}" class="image"><img src="{{ post.image | relative_url }}" alt="" /></a>{% endif %}
+				<h3>{{ post.title }}</h3>
+				<p>{{ post.summary | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
+				<ul class="actions">
+					<li><a href="{{ post.url | relative_url }}" class="button">More</a></li>
+				</ul>
+			</article>
+			{% endfor %}
+		</div>
+	</section>
+{% endif %}

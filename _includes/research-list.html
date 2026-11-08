@@ -1,0 +1,13 @@
+{% assign projects = site.research | sort: "order" %}
+<div class="posts">
+	{% for project in projects %}
+	<article>
+		{% if project.image %}<a href="{{ project.url | relative_url }}" class="image"><img src="{{ project.image | relative_url }}" alt="" /></a>{% endif %}
+		<h3>{{ project.title }}</h3>
+		<p>{{ project.summary }}</p>
+		<ul class="actions">
+			<li><a href="{{ project.url | relative_url }}" class="button">More</a></li>
+		</ul>
+	</article>
+	{% endfor %}
+</div>
