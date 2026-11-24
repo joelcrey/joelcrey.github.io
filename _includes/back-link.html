@@ -1,7 +1,9 @@
-<!-- Back button: research pages go back to Research, math posts to Math stuff, other posts home -->
+<!-- Back button: research pages go back to Research, math posts to Math stuff, other posts home.
+     A hidden post goes home when there is no listed math post, since Math stuff is then not built. -->
+{% assign math_posts = site.posts | where_exp: "post", "post.categories contains 'math'" | where_exp: "post", "post.hidden != true" %}
 {% if page.collection == 'research' %}
 	{% assign back_url = '/research.html' %}{% assign back_label = 'Research' %}
-{% elsif page.collection == 'posts' and page.categories contains 'math' %}
+{% elsif page.collection == 'posts' and page.categories contains 'math' and math_posts.size > 0 %}
 	{% assign back_url = '/math.html' %}{% assign back_label = 'Math stuff' %}
 {% elsif page.collection == 'posts' %}
 	{% assign back_url = '/' %}{% assign back_label = 'Home' %}

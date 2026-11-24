@@ -1,5 +1,5 @@
 <!-- Header: name, main navigation and links -->
-	{% assign math_posts = site.posts | where_exp: "post", "post.categories contains 'math'" %}
+	{% assign math_posts = site.posts | where_exp: "post", "post.categories contains 'math'" | where_exp: "post", "post.hidden != true" %}
 	{% assign here = page.url | remove: '.html' %}
 	<header id="header" class="site-header">
 		<a href="{{ '/' | relative_url }}" class="logo"><strong>{{ site.title }}</strong></a>

@@ -41,4 +41,5 @@ exclude:
   - .github
   - cv/
   - timeline/
+  - ade/
   - vendor

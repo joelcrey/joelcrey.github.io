@@ -9,6 +9,7 @@
 		<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{% if page.hidden %}<meta name="robots" content="noindex, nofollow" />{% endif %}
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 		<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
 		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>

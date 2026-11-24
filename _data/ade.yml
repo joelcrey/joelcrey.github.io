@@ -1,0 +1,3131 @@
+# Simple (ADE) singularities and their adjacencies, by characteristic. Read by _includes/ade-map.html.
+# Generated from the notes "Explicit adjacencies of simple singularities in positive characteristic";
+# edit by hand or regenerate. Math is written as in Obsidian ($...$); nf, f and where are TeX without dollars.
+# Characteristic "0" also covers every p > 5; "2" is p = 2 in odd dimension (curves), "2e" in even dimension
+# (surfaces). For p != 2, add a nondegenerate quadratic form Q in further variables; for p = 2 see the notes.
+#
+# nodes: id (A6^2 means A_6^2), family, n, r (superscript or null), forms: per characteristics, normal
+#        form nf, Milnor number mu (of this normal form; null: infinite) and Tjurina number tau. In each
+#        characteristic the class with the largest superscript is drawn where the classical one is.
+# edges: `from` deforms into `to`; implied: characteristics where the arrow is a composition of others
+#        (drawn only on request); unfoldings: a family F_s with F_0 = from and F_s of type `to` for s != 0
+#        (for generic s when generic: true), with optional where, proof, note, source and a Singular check.
+
+chars:
+  - key: "0"
+    label: "0 or p > 5"
+    equiv: contact
+    nf_ref: '[Ar]'
+    note: 'The classical diagram [Ar].'
+  - key: "5"
+    label: "p = 5"
+    equiv: contact
+    nf_ref: '[GK, 1.2], [Art, §3]'
+    note: '$E_8$ splits into $E_8^0$ and $E_8^1$ [GK, 1.2], [Art, §3].'
+  - key: "3"
+    label: "p = 3"
+    equiv: contact
+    nf_ref: '[GK, 1.2], [Art, §3]'
+    note: '$E_6$, $E_7$ split in two and $E_8$ in three [GK, 1.2], [Art, §3].'
+  - key: "2"
+    label: "p = 2, odd dim."
+    equiv: contact
+    nf_ref: '[GK, 1.2], [Kr]'
+    note: 'Plane curves; in $n = 2k$ variables add $x_3x_4 + \dots + x_{n-1}x_n$ [GK, 1.2], [Kr].'
+  - key: "2e"
+    label: "p = 2, even dim."
+    equiv: contact
+    nf_ref: '[Art, §3], [GK, 1.2], [Kr]'
+    note: 'Surfaces, Artin''s normal forms [Art, §3], [GK, 1.2], [Kr]; in $n = 2k+1$ variables add $x_4x_5 + \dots + x_{n-1}x_n$ [GK, 1.2].'
+  - key: "R0"
+    label: "0"
+    equiv: right
+    nf_ref: '[Ar]'
+    note: 'Same classes as for contact equivalence [Ar], [GN, §3].'
+  - key: "R11"
+    label: "p ≥ 11"
+    equiv: right
+    ends: { A: "A_{p-2}", D: "D_{p-1}" }
+    nf_ref: '[GN, Table 3.2(i)]'
+    note: 'Right simple: $A_k$ ($k \leq p - 2$), $D_k$ ($k \leq p - 1$), $E_6$, $E_7$, $E_8$ [GN, Thm. 3.2].'
+  - key: "R7"
+    label: "p = 7"
+    equiv: right
+    nf_ref: '[GN, Table 3.2(i)]'
+    note: 'Right simple: $A_k$ ($k \leq 5$), $D_k$ ($k \leq 6$), $E_6$ [GN, Thm. 3.2]. $E_7$, $E_8$, listed in [GN, Table 3.2(i)], are left out by [GN, Prop. 2.7 and 3.6]. *Disclaimer: this departs from [GN] and is our own reading; it has not been confirmed by the authors.*'
+  - key: "R5"
+    label: "p = 5"
+    equiv: right
+    nf_ref: '[GN, Table 3.2(i)]'
+    note: 'Right simple: $A_1$, $A_2$, $A_3$, $D_4$ [GN, Thm. 3.2]. $E_6$, $E_7$, listed in [GN, Table 3.2(i)], are left out by [GN, Prop. 2.7 and 3.6]. *Disclaimer: this departs from [GN] and is our own reading; it has not been confirmed by the authors.*'
+  - key: "R3"
+    label: "p = 3"
+    equiv: right
+    nf_ref: '[GN, Table 3.2(i)]'
+    note: 'Only $A_1$ is right simple [GN, Thm. 3.2].'
+  - key: "R2"
+    label: "p = 2, odd dim."
+    equiv: right
+    nf_ref: '[GN, Thm. 3.3]'
+    note: 'Only $A_1 = x_1x_2 + \dots + x_{n-1}x_n$ is right simple [GN, Thm. 3.3].'
+  - key: "R2e"
+    label: "p = 2, even dim."
+    equiv: right
+    nf_ref: '[GN, Thm. 3.3]'
+    note: 'No right simple singularities [GN, Thm. 3.3].'
+
+nodes:
+  - id: A1
+    family: A
+    n: 1
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^2 + y^2'
+        mu: { "0": 1, "5": 1, "3": 1 }
+        tau: { "0": 1, "5": 1, "3": 1 }
+      - chars: ["2"]
+        nf: 'x^2 + x y'
+        mu: { "2": 1 }
+        tau: { "2": 1 }
+      - chars: ["2e"]
+        nf: 'z^2 + x y'
+        mu: { "2e": null }
+        tau: { "2e": 2 }
+      - chars: ["R0"]
+        nf: 'x^2 + y^2'
+        mu: { "R0": 1 }
+        tau: { "R0": 1 }
+      - chars: ["R11"]
+        nf: 'x^2 + y^2'
+        mu: { "R11": 1 }
+        tau: { "R11": 1 }
+      - chars: ["R7"]
+        nf: 'x^2 + y^2'
+        mu: { "R7": 1 }
+        tau: { "R7": 1 }
+      - chars: ["R5"]
+        nf: 'x^2 + y^2'
+        mu: { "R5": 1 }
+        tau: { "R5": 1 }
+      - chars: ["R3"]
+        nf: 'x^2 + y^2'
+        mu: { "R3": 1 }
+        tau: { "R3": 1 }
+      - chars: ["R2"]
+        nf: 'x y'
+        mu: { "R2": 1 }
+        tau: { "R2": 1 }
+  - id: A2
+    family: A
+    n: 2
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^3 + y^2'
+        mu: { "0": 2, "5": 2, "3": null }
+        tau: { "0": 2, "5": 2, "3": 3 }
+      - chars: ["2"]
+        nf: 'x^2 + y^3'
+        mu: { "2": null }
+        tau: { "2": 4 }
+      - chars: ["2e"]
+        nf: 'z^3 + x y'
+        mu: { "2e": 2 }
+        tau: { "2e": 2 }
+      - chars: ["R0"]
+        nf: 'x^3 + y^2'
+        mu: { "R0": 2 }
+        tau: { "R0": 2 }
+      - chars: ["R11"]
+        nf: 'x^3 + y^2'
+        mu: { "R11": 2 }
+        tau: { "R11": 2 }
+      - chars: ["R7"]
+        nf: 'x^3 + y^2'
+        mu: { "R7": 2 }
+        tau: { "R7": 2 }
+      - chars: ["R5"]
+        nf: 'x^3 + y^2'
+        mu: { "R5": 2 }
+        tau: { "R5": 2 }
+  - id: A3
+    family: A
+    n: 3
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^4 + y^2'
+        mu: { "0": 3, "5": 3, "3": 3 }
+        tau: { "0": 3, "5": 3, "3": 3 }
+      - chars: ["2"]
+        nf: 'x^2 + x y^2'
+        mu: { "2": null }
+        tau: { "2": 4 }
+      - chars: ["2e"]
+        nf: 'z^4 + x y'
+        mu: { "2e": null }
+        tau: { "2e": 4 }
+      - chars: ["R0"]
+        nf: 'x^4 + y^2'
+        mu: { "R0": 3 }
+        tau: { "R0": 3 }
+      - chars: ["R11"]
+        nf: 'x^4 + y^2'
+        mu: { "R11": 3 }
+        tau: { "R11": 3 }
+      - chars: ["R7"]
+        nf: 'x^4 + y^2'
+        mu: { "R7": 3 }
+        tau: { "R7": 3 }
+      - chars: ["R5"]
+        nf: 'x^4 + y^2'
+        mu: { "R5": 3 }
+        tau: { "R5": 3 }
+  - id: A4
+    family: A
+    n: 4
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^5 + y^2'
+        mu: { "0": 4, "5": null, "3": 4 }
+        tau: { "0": 4, "5": 5, "3": 4 }
+      - chars: ["2e"]
+        nf: 'z^5 + x y'
+        mu: { "2e": 4 }
+        tau: { "2e": 4 }
+      - chars: ["R0"]
+        nf: 'x^5 + y^2'
+        mu: { "R0": 4 }
+        tau: { "R0": 4 }
+      - chars: ["R11"]
+        nf: 'x^5 + y^2'
+        mu: { "R11": 4 }
+        tau: { "R11": 4 }
+      - chars: ["R7"]
+        nf: 'x^5 + y^2'
+        mu: { "R7": 4 }
+        tau: { "R7": 4 }
+  - id: A4^0
+    family: A
+    n: 4
+    r: 0
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 + y^5'
+        mu: { "2": null }
+        tau: { "2": 8 }
+  - id: A4^1
+    family: A
+    n: 4
+    r: 1
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 + y^5 + x y^3'
+        mu: { "2": null }
+        tau: { "2": 5 }
+  - id: A5
+    family: A
+    n: 5
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^6 + y^2'
+        mu: { "0": 5, "5": 5, "3": null }
+        tau: { "0": 5, "5": 5, "3": 6 }
+      - chars: ["2"]
+        nf: 'x^2 + x y^3'
+        mu: { "2": null }
+        tau: { "2": 5 }
+      - chars: ["2e"]
+        nf: 'z^6 + x y'
+        mu: { "2e": null }
+        tau: { "2e": 6 }
+      - chars: ["R0"]
+        nf: 'x^6 + y^2'
+        mu: { "R0": 5 }
+        tau: { "R0": 5 }
+      - chars: ["R11"]
+        nf: 'x^6 + y^2'
+        mu: { "R11": 5 }
+        tau: { "R11": 5 }
+      - chars: ["R7"]
+        nf: 'x^6 + y^2'
+        mu: { "R7": 5 }
+        tau: { "R7": 5 }
+  - id: A6
+    family: A
+    n: 6
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^7 + y^2'
+        mu: { "0": 6, "5": 6, "3": 6 }
+        tau: { "0": 6, "5": 6, "3": 6 }
+      - chars: ["2e"]
+        nf: 'z^7 + x y'
+        mu: { "2e": 6 }
+        tau: { "2e": 6 }
+      - chars: ["R0"]
+        nf: 'x^7 + y^2'
+        mu: { "R0": 6 }
+        tau: { "R0": 6 }
+      - chars: ["R11"]
+        nf: 'x^7 + y^2'
+        mu: { "R11": 6 }
+        tau: { "R11": 6 }
+  - id: A6^0
+    family: A
+    n: 6
+    r: 0
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 + y^7'
+        mu: { "2": null }
+        tau: { "2": 12 }
+  - id: A6^1
+    family: A
+    n: 6
+    r: 1
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 + y^7 + x y^5'
+        mu: { "2": null }
+        tau: { "2": 9 }
+  - id: A6^2
+    family: A
+    n: 6
+    r: 2
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 + y^7 + x y^4'
+        mu: { "2": null }
+        tau: { "2": 8 }
+  - id: A7
+    family: A
+    n: 7
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^8 + y^2'
+        mu: { "0": 7, "5": 7, "3": 7 }
+        tau: { "0": 7, "5": 7, "3": 7 }
+      - chars: ["2"]
+        nf: 'x^2 + x y^4'
+        mu: { "2": null }
+        tau: { "2": 8 }
+      - chars: ["2e"]
+        nf: 'z^8 + x y'
+        mu: { "2e": null }
+        tau: { "2e": 8 }
+      - chars: ["R0"]
+        nf: 'x^8 + y^2'
+        mu: { "R0": 7 }
+        tau: { "R0": 7 }
+      - chars: ["R11"]
+        nf: 'x^8 + y^2'
+        mu: { "R11": 7 }
+        tau: { "R11": 7 }
+  - id: A8
+    family: A
+    n: 8
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^9 + y^2'
+        mu: { "0": 8, "5": 8, "3": null }
+        tau: { "0": 8, "5": 8, "3": 9 }
+      - chars: ["2e"]
+        nf: 'z^9 + x y'
+        mu: { "2e": 8 }
+        tau: { "2e": 8 }
+      - chars: ["R0"]
+        nf: 'x^9 + y^2'
+        mu: { "R0": 8 }
+        tau: { "R0": 8 }
+  - id: A8^0
+    family: A
+    n: 8
+    r: 0
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 + y^9'
+        mu: { "2": null }
+        tau: { "2": 16 }
+  - id: A8^1
+    family: A
+    n: 8
+    r: 1
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 + y^9 + x y^7'
+        mu: { "2": null }
+        tau: { "2": 13 }
+  - id: A8^2
+    family: A
+    n: 8
+    r: 2
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 + y^9 + x y^6'
+        mu: { "2": null }
+        tau: { "2": 12 }
+  - id: A8^3
+    family: A
+    n: 8
+    r: 3
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 + y^9 + x y^5'
+        mu: { "2": null }
+        tau: { "2": 9 }
+  - id: A9
+    family: A
+    n: 9
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^{10} + y^2'
+        mu: { "0": 9, "5": null, "3": 9 }
+        tau: { "0": 9, "5": 10, "3": 9 }
+      - chars: ["2"]
+        nf: 'x^2 + x y^5'
+        mu: { "2": null }
+        tau: { "2": 9 }
+      - chars: ["2e"]
+        nf: 'z^{10} + x y'
+        mu: { "2e": null }
+        tau: { "2e": 10 }
+      - chars: ["R0"]
+        nf: 'x^{10} + y^2'
+        mu: { "R0": 9 }
+        tau: { "R0": 9 }
+  - id: D4
+    family: D
+    n: 4
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^2 y + y^3'
+        mu: { "0": 4, "5": 4, "3": null }
+        tau: { "0": 4, "5": 4, "3": 4 }
+      - chars: ["2"]
+        nf: 'x^2 y + x y^2'
+        mu: { "2": 4 }
+        tau: { "2": 4 }
+      - chars: ["R0"]
+        nf: 'x^2 y + y^3'
+        mu: { "R0": 4 }
+        tau: { "R0": 4 }
+      - chars: ["R11"]
+        nf: 'x^2 y + y^3'
+        mu: { "R11": 4 }
+        tau: { "R11": 4 }
+      - chars: ["R7"]
+        nf: 'x^2 y + y^3'
+        mu: { "R7": 4 }
+        tau: { "R7": 4 }
+      - chars: ["R5"]
+        nf: 'x^2 y + y^3'
+        mu: { "R5": 4 }
+        tau: { "R5": 4 }
+  - id: D4^0
+    family: D
+    n: 4
+    r: 0
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + x y^2'
+        mu: { "2e": null }
+        tau: { "2e": 8 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D4^1
+    family: D
+    n: 4
+    r: 1
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + x y^2 + x y z'
+        mu: { "2e": null }
+        tau: { "2e": 6 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D5
+    family: D
+    n: 5
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^2 y + y^4'
+        mu: { "0": 5, "5": 5, "3": 5 }
+        tau: { "0": 5, "5": 5, "3": 5 }
+      - chars: ["R0"]
+        nf: 'x^2 y + y^4'
+        mu: { "R0": 5 }
+        tau: { "R0": 5 }
+      - chars: ["R11"]
+        nf: 'x^2 y + y^4'
+        mu: { "R11": 5 }
+        tau: { "R11": 5 }
+      - chars: ["R7"]
+        nf: 'x^2 y + y^4'
+        mu: { "R7": 5 }
+        tau: { "R7": 5 }
+  - id: D5^0
+    family: D
+    n: 5
+    r: 0
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 y + y^4'
+        mu: { "2": null }
+        tau: { "2": 8 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + y^2 z'
+        mu: { "2e": null }
+        tau: { "2e": 8 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D5^1
+    family: D
+    n: 5
+    r: 1
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 y + y^4 + x y^3'
+        mu: { "2": 6 }
+        tau: { "2": 6 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + y^2 z + x y z'
+        mu: { "2e": null }
+        tau: { "2e": 6 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D6
+    family: D
+    n: 6
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^2 y + y^5'
+        mu: { "0": 6, "5": null, "3": 6 }
+        tau: { "0": 6, "5": 6, "3": 6 }
+      - chars: ["2"]
+        nf: 'x^2 y + x y^3'
+        mu: { "2": 6 }
+        tau: { "2": 6 }
+      - chars: ["R0"]
+        nf: 'x^2 y + y^5'
+        mu: { "R0": 6 }
+        tau: { "R0": 6 }
+      - chars: ["R11"]
+        nf: 'x^2 y + y^5'
+        mu: { "R11": 6 }
+        tau: { "R11": 6 }
+      - chars: ["R7"]
+        nf: 'x^2 y + y^5'
+        mu: { "R7": 6 }
+        tau: { "R7": 6 }
+  - id: D6^0
+    family: D
+    n: 6
+    r: 0
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + x y^3'
+        mu: { "2e": null }
+        tau: { "2e": 12 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D6^1
+    family: D
+    n: 6
+    r: 1
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + x y^3 + x y^2 z'
+        mu: { "2e": null }
+        tau: { "2e": 10 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D6^2
+    family: D
+    n: 6
+    r: 2
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + x y^3 + x y z'
+        mu: { "2e": null }
+        tau: { "2e": 8 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D7
+    family: D
+    n: 7
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^2 y + y^6'
+        mu: { "0": 7, "5": 7, "3": null }
+        tau: { "0": 7, "5": 7, "3": 7 }
+      - chars: ["R0"]
+        nf: 'x^2 y + y^6'
+        mu: { "R0": 7 }
+        tau: { "R0": 7 }
+      - chars: ["R11"]
+        nf: 'x^2 y + y^6'
+        mu: { "R11": 7 }
+        tau: { "R11": 7 }
+  - id: D7^0
+    family: D
+    n: 7
+    r: 0
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 y + y^6'
+        mu: { "2": null }
+        tau: { "2": 12 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + y^3 z'
+        mu: { "2e": null }
+        tau: { "2e": 12 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D7^1
+    family: D
+    n: 7
+    r: 1
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 y + y^6 + x y^5'
+        mu: { "2": 10 }
+        tau: { "2": 10 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + y^3 z + x y^2 z'
+        mu: { "2e": null }
+        tau: { "2e": 10 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D7^2
+    family: D
+    n: 7
+    r: 2
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 y + y^6 + x y^4'
+        mu: { "2": 8 }
+        tau: { "2": 8 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + y^3 z + x y z'
+        mu: { "2e": null }
+        tau: { "2e": 8 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D8
+    family: D
+    n: 8
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^2 y + y^7'
+        mu: { "0": 8, "5": 8, "3": 8 }
+        tau: { "0": 8, "5": 8, "3": 8 }
+      - chars: ["2"]
+        nf: 'x^2 y + x y^4'
+        mu: { "2": 8 }
+        tau: { "2": 8 }
+      - chars: ["R0"]
+        nf: 'x^2 y + y^7'
+        mu: { "R0": 8 }
+        tau: { "R0": 8 }
+      - chars: ["R11"]
+        nf: 'x^2 y + y^7'
+        mu: { "R11": 8 }
+        tau: { "R11": 8 }
+  - id: D8^0
+    family: D
+    n: 8
+    r: 0
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + x y^4'
+        mu: { "2e": null }
+        tau: { "2e": 16 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D8^1
+    family: D
+    n: 8
+    r: 1
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + x y^4 + x y^3 z'
+        mu: { "2e": null }
+        tau: { "2e": 14 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D8^2
+    family: D
+    n: 8
+    r: 2
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + x y^4 + x y^2 z'
+        mu: { "2e": null }
+        tau: { "2e": 12 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D8^3
+    family: D
+    n: 8
+    r: 3
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + x y^4 + x y z'
+        mu: { "2e": null }
+        tau: { "2e": 10 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D9
+    family: D
+    n: 9
+    r: null
+    forms:
+      - chars: ["0", "5", "3"]
+        nf: 'x^2 y + y^8'
+        mu: { "0": 9, "5": 9, "3": 9 }
+        tau: { "0": 9, "5": 9, "3": 9 }
+      - chars: ["R0"]
+        nf: 'x^2 y + y^8'
+        mu: { "R0": 9 }
+        tau: { "R0": 9 }
+  - id: D9^0
+    family: D
+    n: 9
+    r: 0
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 y + y^8'
+        mu: { "2": null }
+        tau: { "2": 16 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + y^4 z'
+        mu: { "2e": null }
+        tau: { "2e": 16 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D9^1
+    family: D
+    n: 9
+    r: 1
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 y + y^8 + x y^7'
+        mu: { "2": 14 }
+        tau: { "2": 14 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + y^4 z + x y^3 z'
+        mu: { "2e": null }
+        tau: { "2e": 14 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D9^2
+    family: D
+    n: 9
+    r: 2
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 y + y^8 + x y^6'
+        mu: { "2": 12 }
+        tau: { "2": 12 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + y^4 z + x y^2 z'
+        mu: { "2e": null }
+        tau: { "2e": 12 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: D9^3
+    family: D
+    n: 9
+    r: 3
+    forms:
+      - chars: ["2"]
+        nf: 'x^2 y + y^8 + x y^5'
+        mu: { "2": 10 }
+        tau: { "2": 10 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^2 y + y^4 z + x y z'
+        mu: { "2e": null }
+        tau: { "2e": 10 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E6
+    family: E
+    n: 6
+    r: null
+    forms:
+      - chars: ["0", "5"]
+        nf: 'x^3 + y^4'
+        mu: { "0": 6, "5": 6 }
+        tau: { "0": 6, "5": 6 }
+      - chars: ["R0"]
+        nf: 'x^3 + y^4'
+        mu: { "R0": 6 }
+        tau: { "R0": 6 }
+      - chars: ["R11"]
+        nf: 'x^3 + y^4'
+        mu: { "R11": 6 }
+        tau: { "R11": 6 }
+      - chars: ["R7"]
+        nf: 'x^3 + y^4'
+        mu: { "R7": 6 }
+        tau: { "R7": 6 }
+  - id: E6^0
+    family: E
+    n: 6
+    r: 0
+    forms:
+      - chars: ["3"]
+        nf: 'x^3 + y^4'
+        mu: { "3": null }
+        tau: { "3": 9 }
+        tau_ref: { "3": "[Art, §3]" }
+      - chars: ["2"]
+        nf: 'x^3 + y^4'
+        mu: { "2": null }
+        tau: { "2": 8 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + y^2 z'
+        mu: { "2e": null }
+        tau: { "2e": 8 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E6^1
+    family: E
+    n: 6
+    r: 1
+    forms:
+      - chars: ["3"]
+        nf: 'x^3 + y^4 + x^2 y^2'
+        mu: { "3": null }
+        tau: { "3": 7 }
+        tau_ref: { "3": "[Art, §3]" }
+      - chars: ["2"]
+        nf: 'x^3 + y^4 + x y^3'
+        mu: { "2": 7 }
+        tau: { "2": 6 }
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + y^2 z + x y z'
+        mu: { "2e": null }
+        tau: { "2e": 6 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E7
+    family: E
+    n: 7
+    r: null
+    forms:
+      - chars: ["0", "5"]
+        nf: 'x^3 + x y^3'
+        mu: { "0": 7, "5": 7 }
+        tau: { "0": 7, "5": 7 }
+      - chars: ["2"]
+        nf: 'x^3 + x y^3'
+        mu: { "2": 7 }
+        tau: { "2": 7 }
+      - chars: ["R0"]
+        nf: 'x^3 + x y^3'
+        mu: { "R0": 7 }
+        tau: { "R0": 7 }
+      - chars: ["R11"]
+        nf: 'x^3 + x y^3'
+        mu: { "R11": 7 }
+        tau: { "R11": 7 }
+  - id: E7^0
+    family: E
+    n: 7
+    r: 0
+    forms:
+      - chars: ["3"]
+        nf: 'x^3 + x y^3'
+        mu: { "3": null }
+        tau: { "3": 9 }
+        tau_ref: { "3": "[Art, §3]" }
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + x y^3'
+        mu: { "2e": null }
+        tau: { "2e": 14 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E7^1
+    family: E
+    n: 7
+    r: 1
+    forms:
+      - chars: ["3"]
+        nf: 'x^3 + x y^3 + x^2 y^2'
+        mu: { "3": null }
+        tau: { "3": 7 }
+        tau_ref: { "3": "[Art, §3]" }
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + x y^3 + x^2 y z'
+        mu: { "2e": null }
+        tau: { "2e": 12 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E7^2
+    family: E
+    n: 7
+    r: 2
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + x y^3 + y^3 z'
+        mu: { "2e": null }
+        tau: { "2e": 10 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E7^3
+    family: E
+    n: 7
+    r: 3
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + x y^3 + x y z'
+        mu: { "2e": null }
+        tau: { "2e": 8 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E8
+    family: E
+    n: 8
+    r: null
+    forms:
+      - chars: ["0"]
+        nf: 'x^3 + y^5'
+        mu: { "0": 8 }
+        tau: { "0": 8 }
+      - chars: ["2"]
+        nf: 'x^3 + y^5'
+        mu: { "2": 8 }
+        tau: { "2": 8 }
+      - chars: ["R0"]
+        nf: 'x^3 + y^5'
+        mu: { "R0": 8 }
+        tau: { "R0": 8 }
+      - chars: ["R11"]
+        nf: 'x^3 + y^5'
+        mu: { "R11": 8 }
+        tau: { "R11": 8 }
+  - id: E8^0
+    family: E
+    n: 8
+    r: 0
+    forms:
+      - chars: ["5"]
+        nf: 'x^3 + y^5'
+        mu: { "5": null }
+        tau: { "5": 10 }
+        tau_ref: { "5": "[Art, §3]" }
+      - chars: ["3"]
+        nf: 'x^3 + y^5'
+        mu: { "3": null }
+        tau: { "3": 12 }
+        tau_ref: { "3": "[Art, §3]" }
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + y^5'
+        mu: { "2e": null }
+        tau: { "2e": 16 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E8^1
+    family: E
+    n: 8
+    r: 1
+    forms:
+      - chars: ["5"]
+        nf: 'x^3 + y^5 + x y^4'
+        mu: { "5": 10 }
+        tau: { "5": 8 }
+        tau_ref: { "5": "[Art, §3]" }
+      - chars: ["3"]
+        nf: 'x^3 + y^5 + x^2 y^3'
+        mu: { "3": null }
+        tau: { "3": 10 }
+        tau_ref: { "3": "[Art, §3]" }
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + y^5 + x y^3 z'
+        mu: { "2e": null }
+        tau: { "2e": 14 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E8^2
+    family: E
+    n: 8
+    r: 2
+    forms:
+      - chars: ["3"]
+        nf: 'x^3 + y^5 + x^2 y^2'
+        mu: { "3": null }
+        tau: { "3": 8 }
+        tau_ref: { "3": "[Art, §3]" }
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + y^5 + x y^2 z'
+        mu: { "2e": null }
+        tau: { "2e": 12 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E8^3
+    family: E
+    n: 8
+    r: 3
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + y^5 + y^3 z'
+        mu: { "2e": null }
+        tau: { "2e": 10 }
+        tau_ref: { "2e": "[Art, §3]" }
+  - id: E8^4
+    family: E
+    n: 8
+    r: 4
+    forms:
+      - chars: ["2e"]
+        nf: 'z^2 + x^3 + y^5 + x y z'
+        mu: { "2e": null }
+        tau: { "2e": 8 }
+        tau_ref: { "2e": "[Art, §3]" }
+
+edges:
+  - from: A2
+    to: A1
+    chars: ["0", "5", "3", "2", "2e"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]', "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^3 + t x^2 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{2} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{2} + y^2$, an $A_{1}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x^3+x^2+y^2;   // F_t at t = 1
+          classify(F);   // normal form A[1]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^3 + t x^2 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{2} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{2} + y^2$, an $A_{1}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x^3+x^2+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[1]:x^2+y^2
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^3 + t x^2 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{2} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{2} + y^2$, an $A_{1}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^3+x^2+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[1]:x^2+y^2
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2"]
+        f: 'x^2 + y^3 + t x y'
+      - chars: ["2e"]
+        f: 'z^3 + x y + t z^2'
+  - from: A3
+    to: A2
+    chars: ["0", "5", "3", "2", "2e"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]', "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^4 + t x^3 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{3} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{3} + y^2$, an $A_{2}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x^4+x^3+y^2;   // F_t at t = 1
+          classify(F);   // normal form A[2]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^4 + t x^3 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{3} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{3} + y^2$, an $A_{2}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x^4+x^3+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[2]:x^2+y^3
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^4 + t x^3 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{3} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{3} + y^2$, an $A_{2}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^4+x^3+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[2]:x^2+y^3
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2"]
+        f: 'x^2 + x y^2 + t y^3'
+      - chars: ["2e"]
+        f: 'z^4 + x y + t z^3'
+  - from: A4
+    to: A3
+    chars: ["0", "5", "3", "2e"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^5 + t x^4 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{4} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{4} + y^2$, an $A_{3}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x^5+x^4+y^2;   // F_t at t = 1
+          classify(F);   // normal form A[3]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^5 + t x^4 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{4} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{4} + y^2$, an $A_{3}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x^5+x^4+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[3]:x^2+y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^5 + t x^4 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{4} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{4} + y^2$, an $A_{3}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^5+x^4+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[3]:x^2+y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^5 + x y + t z^4'
+  - from: A5
+    to: A4
+    chars: ["0", "5", "3", "2e"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^6 + t x^5 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{5} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{5} + y^2$, an $A_{4}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x^6+x^5+y^2;   // F_t at t = 1
+          classify(F);   // normal form A[4]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^6 + t x^5 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{5} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{5} + y^2$, an $A_{4}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x^6+x^5+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[4]:x^2+y^5
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^6 + t x^5 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{5} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{5} + y^2$, an $A_{4}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^6+x^5+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[4]:x^2+y^5
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^6 + x y + t z^5'
+  - from: A6
+    to: A5
+    chars: ["0", "5", "3", "2e"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^7 + t x^6 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{6} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{6} + y^2$, an $A_{5}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x^7+x^6+y^2;   // F_t at t = 1
+          classify(F);   // normal form A[5]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^7 + t x^6 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{6} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{6} + y^2$, an $A_{5}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x^7+x^6+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[5]:x^2+y^6
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^7 + t x^6 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{6} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{6} + y^2$, an $A_{5}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^7+x^6+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[5]:x^2+y^6
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^7 + x y + t z^6'
+  - from: A7
+    to: A6
+    chars: ["0", "5", "3", "2e"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^8 + t x^7 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{7} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{7} + y^2$, an $A_{6}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x^8+x^7+y^2;   // F_t at t = 1
+          classify(F);   // normal form A[6]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^8 + t x^7 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{7} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{7} + y^2$, an $A_{6}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x^8+x^7+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[6]:x^2+y^7
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^8 + t x^7 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{7} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{7} + y^2$, an $A_{6}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^8+x^7+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[6]:x^2+y^7
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^8 + x y + t z^7'
+  - from: A8
+    to: A7
+    chars: ["0", "5", "3", "2e"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^9 + t x^8 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{8} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{8} + y^2$, an $A_{7}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x^9+x^8+y^2;   // F_t at t = 1
+          classify(F);   // normal form A[7]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^9 + t x^8 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{8} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{8} + y^2$, an $A_{7}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x^9+x^8+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[7]:x^2+y^8
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^9 + t x^8 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{8} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{8} + y^2$, an $A_{7}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^9+x^8+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[7]:x^2+y^8
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^9 + x y + t z^8'
+  - from: A9
+    to: A8
+    chars: ["0", "5", "3", "2e"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^{10} + t x^9 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{9} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{9} + y^2$, an $A_{8}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x^10+x^9+y^2;   // F_t at t = 1
+          classify(F);   // normal form A[8]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^{10} + t x^9 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{9} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{9} + y^2$, an $A_{8}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x^10+x^9+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[8]:x^2+y^9
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^{10} + t x^9 + y^2'
+        proof: 'For $t \neq 0$, $u = t + x$ is a unit and $F_t = u\,(x^{9} + (u^{-1/2}y)^2)$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^{9} + y^2$, an $A_{8}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^10+x^9+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[8]:x^2+y^9
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^{10} + x y + t z^9'
+  - from: D5
+    to: D4
+    chars: ["0", "5", "3"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y + y^4 + t y^3'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{3})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{3}$, a $D_{4}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = y^4+x^2*y+y^3;   // F_t at t = 1
+          classify(F);   // normal form D[4]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y + y^4 + t y^3'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{3})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{3}$, a $D_{4}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = y^4+x^2*y+y^3;   // F_t at t = 1
+          classifyCeq(F);   // D[4]:x^2*y+x^3
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y + y^4 + t y^3'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{3})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{3}$, a $D_{4}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^4+x^2*y+y^3;   // F_t at t = 1
+          classifyCeq(F);   // D[4]:x^2*y+y^3
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: D6
+    to: D5
+    chars: ["0", "5", "3"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y + y^5 + t y^4'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{4})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{4}$, a $D_{5}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = y^5+y^4+x^2*y;   // F_t at t = 1
+          classify(F);   // normal form D[5]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y + y^5 + t y^4'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{4})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{4}$, a $D_{5}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = y^5+y^4+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[5]:x^2*y+y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y + y^5 + t y^4'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{4})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{4}$, a $D_{5}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^5+y^4+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[5]:x^2*y+y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: D7
+    to: D6
+    chars: ["0", "5", "3"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y + y^6 + t y^5'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{5})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{5}$, a $D_{6}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = y^6+y^5+x^2*y;   // F_t at t = 1
+          classify(F);   // normal form D[6]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y + y^6 + t y^5'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{5})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{5}$, a $D_{6}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = y^6+y^5+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[6]:x^2*y+y^5
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y + y^6 + t y^5'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{5})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{5}$, a $D_{6}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^6+y^5+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[6]:x^2*y+y^5
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: D8
+    to: D7
+    chars: ["0", "5", "3"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y + y^7 + t y^6'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{6})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{6}$, a $D_{7}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = y^7+y^6+x^2*y;   // F_t at t = 1
+          classify(F);   // normal form D[7]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y + y^7 + t y^6'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{6})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{6}$, a $D_{7}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = y^7+y^6+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[7]:x^2*y+y^6
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y + y^7 + t y^6'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{6})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{6}$, a $D_{7}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^7+y^6+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[7]:x^2*y+y^6
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: D9
+    to: D8
+    chars: ["0", "5", "3"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y + y^8 + t y^7'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{7})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{7}$, a $D_{8}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = y^8+y^7+x^2*y;   // F_t at t = 1
+          classify(F);   // normal form D[8]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y + y^8 + t y^7'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{7})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{7}$, a $D_{8}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = y^8+y^7+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[8]:x^2*y+y^7
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y + y^8 + t y^7'
+        proof: 'For $t \neq 0$, $u = t + y$ is a unit and $F_t = u\,((u^{-1/2}x)^2 y + y^{7})$; the square root of the unit $u$ exists since $p \neq 2$. So $F_t$ is contact equivalent to $x^2y + y^{7}$, a $D_{8}$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^8+y^7+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[8]:x^2*y+y^7
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: D4
+    to: A3
+    chars: ["0", "5", "3", "2"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]', "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y - y^3 - (t^2 y^2) + 2 t^2 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{2}y\big)^2 - y^{4}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{2}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{4}$, an $A_{3}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classify(F);   // normal form A[3]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y - y^3 - (t^2 y^2) + 2 t^2 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{2}y\big)^2 - y^{4}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{2}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{4}$, an $A_{3}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[3]:x^2+y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y - y^3 - (t^2 y^2) + 2 t^2 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{2}y\big)^2 - y^{4}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{2}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{4}$, an $A_{3}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y-y^3-x^2-x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[3]:x^2+y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2"]
+        f: 'x^2 y + x y^2 + t x^2'
+  - from: D5
+    to: A4
+    chars: ["0", "5", "3"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y - y^4 - (t^2 y^3 + t^4 y^2) + 2 t^3 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{3}y\big)^2 - y^{5}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{3}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{5}$, an $A_{4}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = -y^4+x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classify(F);   // normal form A[4]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y - y^4 - (t^2 y^3 + t^4 y^2) + 2 t^3 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{3}y\big)^2 - y^{5}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{3}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{5}$, an $A_{4}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = -y^4+x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[4]:x^2+y^5
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y - y^4 - (t^2 y^3 + t^4 y^2) + 2 t^3 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{3}y\big)^2 - y^{5}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{3}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{5}$, an $A_{4}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = -y^4+x^2*y-y^3-x^2-x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[4]:x^2+y^5
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: D6
+    to: A5
+    chars: ["0", "5", "3", "2"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]', "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y - y^5 - (t^2 y^4 + t^4 y^3 + t^6 y^2) + 2 t^4 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{4}y\big)^2 - y^{6}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{4}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{6}$, an $A_{5}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = -y^5-y^4+x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classify(F);   // normal form A[5]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y - y^5 - (t^2 y^4 + t^4 y^3 + t^6 y^2) + 2 t^4 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{4}y\big)^2 - y^{6}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{4}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{6}$, an $A_{5}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = -y^5-y^4+x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[5]:x^2+y^6
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y - y^5 - (t^2 y^4 + t^4 y^3 + t^6 y^2) + 2 t^4 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{4}y\big)^2 - y^{6}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{4}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{6}$, an $A_{5}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = -y^5-y^4+x^2*y-y^3-x^2-x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[5]:x^2+y^6
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2"]
+        f: 'x^2 y + x y^3 + t x^2'
+  - from: D7
+    to: A6
+    chars: ["0", "5", "3"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y - y^6 - (t^2 y^5 + t^4 y^4 + t^6 y^3 + t^8 y^2) + 2 t^5 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{5}y\big)^2 - y^{7}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{5}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{7}$, an $A_{6}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = -y^6-y^5-y^4+x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classify(F);   // normal form A[6]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y - y^6 - (t^2 y^5 + t^4 y^4 + t^6 y^3 + t^8 y^2) + 2 t^5 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{5}y\big)^2 - y^{7}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{5}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{7}$, an $A_{6}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = -y^6-y^5-y^4+x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[6]:x^2+y^7
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y - y^6 - (t^2 y^5 + t^4 y^4 + t^6 y^3 + t^8 y^2) + 2 t^5 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{5}y\big)^2 - y^{7}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{5}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{7}$, an $A_{6}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = -y^6-y^5-y^4+x^2*y-y^3-x^2-x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[6]:x^2+y^7
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: D8
+    to: A7
+    chars: ["0", "5", "3", "2"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]', "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y - y^7 - (t^2 y^6 + t^4 y^5 + t^6 y^4 + t^8 y^3 + t^{10} y^2) + 2 t^6 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{6}y\big)^2 - y^{8}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{6}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{8}$, an $A_{7}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = -y^7-y^6-y^5-y^4+x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classify(F);   // normal form A[7]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y - y^7 - (t^2 y^6 + t^4 y^5 + t^6 y^4 + t^8 y^3 + t^{10} y^2) + 2 t^6 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{6}y\big)^2 - y^{8}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{6}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{8}$, an $A_{7}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = -y^7-y^6-y^5-y^4+x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[7]:x^2+y^8
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y - y^7 - (t^2 y^6 + t^4 y^5 + t^6 y^4 + t^8 y^3 + t^{10} y^2) + 2 t^6 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{6}y\big)^2 - y^{8}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{6}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{8}$, an $A_{7}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = -y^7-y^6-y^5-y^4+x^2*y-y^3-x^2-x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[7]:x^2+y^8
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2"]
+        f: 'x^2 y + x y^4 + t x^2'
+  - from: D9
+    to: A8
+    chars: ["0", "5", "3"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^2 y - y^8 - (t^2 y^7 + t^4 y^6 + t^6 y^5 + t^8 y^4 + t^{10} y^3 + t^{12} y^2) + 2 t^7 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{7}y\big)^2 - y^{9}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{7}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{9}$, an $A_{8}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = -y^8-y^7-y^6-y^5-y^4+x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classify(F);   // normal form A[8]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^2 y - y^8 - (t^2 y^7 + t^4 y^6 + t^6 y^5 + t^8 y^4 + t^{10} y^3 + t^{12} y^2) + 2 t^7 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{7}y\big)^2 - y^{9}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{7}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{9}$, an $A_{8}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = -y^8-y^7-y^6-y^5-y^4+x^2*y-y^3-x^2+2*x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[8]:x^2+y^9
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["3"]
+        f: 'x^2 y - y^8 - (t^2 y^7 + t^4 y^6 + t^6 y^5 + t^8 y^4 + t^{10} y^3 + t^{12} y^2) + 2 t^7 x y - t^2 x^2'
+        proof: 'One checks the identity $(y - t^2)\,F_t = \big(x(y - t^2) + t^{7}y\big)^2 - y^{9}$. For $t \neq 0$, $y - t^2$ is a unit and $X = x(y - t^2) + t^{7}y$ is a coordinate, so $F_t$ is contact equivalent to $X^2 - y^{9}$, an $A_{8}$.'
+        note: 'With $t^2$ for $t$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = -y^8-y^7-y^6-y^5-y^4+x^2*y-y^3-x^2-x*y-y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[8]:x^2+y^9
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E6
+    to: A5
+    chars: ["0", "5"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^3 + (y^2 + t x)^2'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = y^4+x^3+2*x*y^2+x^2;   // F_t at t = 1
+          classify(F);   // normal form A[5]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^3 + (y^2 + t x)^2'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = y^4+x^3+2*x*y^2+x^2;   // F_t at t = 1
+          classifyCeq(F);   // A[5]:x^2+y^6
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E7
+    to: A6
+    chars: ["0", "5"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: '16 t^3 x^2 + x^3 - 4 t x^2 y - 8 t^2 x y^2 + y^3 (x + t y)'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x*y^3+y^4+x^3-4*x^2*y-8*x*y^2+16*x^2;   // F_t at t = 1
+          classify(F);   // normal form A[6]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: '16 t^3 x^2 + x^3 - 4 t x^2 y - 8 t^2 x y^2 + y^3 (x + t y)'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x*y^3+y^4+x^3+x^2*y+2*x*y^2+x^2;   // F_t at t = 1
+          classifyCeq(F);   // A[6]:x^2+y^7
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E7
+    to: E6
+    chars: ["0", "5"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^3 + x y^3 + t y^4'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x*y^3+y^4+x^3;   // F_t at t = 1
+          classify(F);   // normal form E[6]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^3 + x y^3 + t y^4'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x*y^3+y^4+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^0[6]:x^3+y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E8
+    to: E7
+    chars: ["0", "2"]
+    refs: { "0": '[Ar]', "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 'x^3 + y^5 + t x y^3'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = y^5+x*y^3+x^3;   // F_t at t = 1
+          classify(F);   // normal form E[7]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2"]
+        f: 'x^3 + y^5 + t x y^3'
+  - from: E8^0
+    to: E7
+    chars: ["5"]
+    implied: ["5"]
+    unfoldings:
+      - chars: ["5"]
+        f: 'x^3 + y^5 + t x y^3'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = y^5+x*y^3+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^0[7]:x^3+x*y^3
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E6^0
+    to: D5
+    chars: ["3"]
+    implied: ["3"]
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + t x^2 y + y^4'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^4+x^3+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[5]:x^2*y+y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E6^0
+    to: A5
+    chars: ["3", "2e"]
+    implied: ["3", "2e"]
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + (y^2 + t x)^2'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^4+x^3-x*y^2+x^2;   // F_t at t = 1
+          classifyCeq(F);   // A[5]:x^2+y^6
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^2 z + t x z'
+  - from: E7^0
+    to: D6
+    chars: ["3"]
+    implied: ["3"]
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + t x^2 y + x y^3'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x*y^3+x^3+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[6]:x^2*y+y^5
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E7^0
+    to: A6
+    chars: ["3"]
+    implied: ["3"]
+    unfoldings:
+      - chars: ["3"]
+        f: '16 t^3 x^2 + x^3 - 4 t x^2 y - 8 t^2 x y^2 + y^3 (x + t y)'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x*y^3+y^4+x^3-x^2*y+x*y^2+x^2;   // F_t at t = 1
+          classifyCeq(F);   // A[6]:x^2+y^7
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E8^0
+    to: D7
+    chars: ["3", "5"]
+    implied: ["5", "3"]
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + t^2 x^2 y + 2 t x y^3 + y^5'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^5-x*y^3+x^3+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[7]:x^2*y+y^6
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: '(x - 3 t^2 y)^2 (x + 6 t^2 y) - 18 t^3 y^4 + 6 t x y^3 + y^5'
+        note: 'With $t^2$ for $t$ in the linear factors; the printed unfolding is a $D_7$ only for $t = 1$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = y^5+x*y^3+2*y^4+x^3-2*x*y^2-y^3;   // F_t at t = 1
+          classifyCeq(F);   // D[7]:x^2*y+y^6
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E7^0
+    to: E6^0
+    chars: ["3", "2e"]
+    implied: ["2e"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + x y^3 + t y^4'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x*y^3+y^4+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^0[6]:x^3+y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + t y^2 z'
+  - from: E8^0
+    to: E7^0
+    chars: ["3", "2e"]
+    implied: ["3", "2e"]
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + y^5 + t x y^3'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^5+x*y^3+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^0[7]:x^3+x*y^3
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + t x y^3'
+  - from: E8
+    to: A7
+    chars: ["0", "2"]
+    refs: { "0": '[Ar]', "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["0"]
+        f: 't^5 (x - t^2 y)^2 - x (5 t^4 y^2 + 4 t y^3) + x^3 + 4 t^6 y^3 + 5 t^3 y^4 + y^5'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = y^5-4*x*y^3+5*y^4+x^3-5*x*y^2+4*y^3+x^2-2*x*y+y^2;   // F_t at t = 1
+          classify(F);   // normal form A[7]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2"]
+        f: 'x^3 + y^5 + t^5 x^2 + t^9 y^2 + t^4 x y^2 + t^3 y^4'
+        note: 'Arnold''s $A_7 \leftarrow E_8$ unfolding mod $2$.'
+        source: '[Ar]'
+  - from: E6
+    to: D5
+    chars: ["0", "5"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["0"]
+        f: '(x - t y)^2 (x + 2 t y) + y^4'
+        note: 'Valid for $p \geq 5$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = y^4+x^3-3*x*y^2+2*y^3;   // F_t at t = 1
+          classify(F);   // normal form D[5]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: '(x - t y)^2 (x + 2 t y) + y^4'
+        note: 'Valid for $p \geq 5$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = y^4+x^3+2*x*y^2+2*y^3;   // F_t at t = 1
+          classifyCeq(F);   // D[5]:x^2*y+y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E7
+    to: D6
+    chars: ["0", "5", "2"]
+    refs: { "0": '[Ar]', "5": '[GK, §4.2]', "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["0"]
+        f: '(x - t y)^2 (x + 2 t y) + y^3 (x - t y)'
+        note: 'Valid for $p \geq 5$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = x*y^3-y^4+x^3-3*x*y^2+2*y^3;   // F_t at t = 1
+          classify(F);   // normal form D[6]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: '(x - t y)^2 (x + 2 t y) + y^3 (x - t y)'
+        note: 'Valid for $p \geq 5$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x*y^3-y^4+x^3+2*x*y^2+2*y^3;   // F_t at t = 1
+          classifyCeq(F);   // D[6]:x^2*y+y^5
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2"]
+        f: 'x^3 + t x^2 y + x y^3'
+  - from: E8
+    to: D7
+    chars: ["0"]
+    refs: { "0": '[Ar]' }
+    unfoldings:
+      - chars: ["0"]
+        f: '(x - 3 t^2 y)^2 (x + 6 t^2 y) - 18 t^3 y^4 + 6 t x y^3 + y^5'
+        note: 'With $t^2$ for $t$ in the linear factors; the printed unfolding is a $D_7$ only for $t = 1$.'
+        source: '[Ar]'
+        singular: |
+          LIB "classify.lib";
+          ring r = 0,(x,y),ds;
+          poly F = y^5+6*x*y^3-18*y^4+x^3-27*x*y^2+54*y^3;   // F_t at t = 1
+          classify(F);   // normal form D[7]
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E8^0
+    to: A7
+    chars: ["5", "2e"]
+    implied: ["5", "2e"]
+    unfoldings:
+      - chars: ["5"]
+        f: 't^5 (x - t^2 y)^2 - x (5 t^4 y^2 + 4 t y^3) + x^3 + 4 t^6 y^3 + 5 t^3 y^4 + y^5'
+        source: '[Ar]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = y^5+x*y^3+x^3-y^3+x^2-2*x*y+y^2;   // F_t at t = 1
+          classifyCeq(F);   // A[7]:x^2+y^8
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + c_8'
+        where: 'c_8 = t^3 y^2 z + t^5 x z + t^2 x y^3'
+  - from: E6^0
+    to: E6^1
+    chars: ["3", "2", "2e"]
+    refs: { "3": '[GK, §4.2]', "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + y^4 + t x^2 y^2'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y^2+y^4+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^1[6]:x^3+y^4+x^2*y^2
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2"]
+        f: 'x^3 + y^4 + t x y^3'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^2 z + t x y z'
+  - from: E7^0
+    to: E7^1
+    chars: ["3", "2e"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + x y^3 + t x^2 y^2'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y^2+x*y^3+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^1[7]:x^3+x*y^3+x^2*y^2
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + t x^2 y z'
+  - from: E8^0
+    to: E8^1
+    chars: ["3", "5", "2e"]
+    refs: { "3": '[GK, §4.2]', "5": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + y^5 + t x^2 y^3'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y^3+y^5+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^1[8]:x^3+y^5+x^2*y^3
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["5"]
+        f: 'x^3 + y^5 + t x y^4'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x*y^4+y^5+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^1[8]:x^3+y^5+x*y^4
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + t x y^3 z'
+  - from: E8^1
+    to: E8^2
+    chars: ["3", "2e"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + y^5 + x^2 y^3 + t x^2 y^2'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y^3+y^5+x^2*y^2+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^2[8]:x^3+y^5+x^2*y^2
+        singular_note: 'At $t = 1$ only; not a proof for generic $t$.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y^3 z + t x y^2 z'
+        generic: true
+  - from: E7^1
+    to: E6^1
+    chars: ["3"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + x y^3 + x^2 y^2 + t y^4'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y^2+x*y^3+y^4+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^1[6]:x^3+y^4+x^2*y^2
+        singular_note: 'At $t = 1$ only; not a proof for generic $t$.'
+  - from: E8^1
+    to: E7^0
+    chars: ["3", "2e"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + y^5 + x^2 y^3 + t x y^3'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y^3+y^5+x*y^3+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^0[7]:x^3+x*y^3
+        singular_note: 'At $t = 1$ only; not a proof for generic $t$.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y^3 z + t x y^3'
+        generic: true
+  - from: E8^2
+    to: E7^1
+    chars: ["3", "2e"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + y^5 + x^2 y^2 + t x y^3'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^5+x^2*y^2+x*y^3+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^1[7]:x^3+x*y^3+x^2*y^2
+        singular_note: 'At $t = 1$ only; not a proof for generic $t$.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y^2 z + t x y^3'
+        generic: true
+  - from: E6^1
+    to: D5
+    chars: ["3"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + t x^2 y + y^4 + x^2 y^2'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y^2+y^4+x^3+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[5]:x^2*y+y^4
+        singular_note: 'At $t = 1$ only; not a proof for generic $t$.'
+  - from: E6^1
+    to: A5
+    chars: ["3", "2", "2e"]
+    refs: { "3": '[GK, §4.2]', "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + (y^2 + t x)^2 + x^2 y^2'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y^2+y^4+x^3+x*y^2+x^2;   // F_t at t = 2
+          classifyCeq(F);   // A[5]:x^2+y^6
+        singular_note: 'At $t = 2$ only; not a proof for generic $t$.'
+      - chars: ["2"]
+        f: 'x^3 + y^4 + x y^3 + t x^2 (t + y)'
+        generic: true
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^2 z + x y z + t x z'
+        generic: true
+  - from: E7^1
+    to: D6
+    chars: ["3"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + t x^2 y + x y^3 + x^2 y^2'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y^2+x*y^3+x^3+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[6]:x^2*y+y^5
+        singular_note: 'At $t = 1$ only; not a proof for generic $t$.'
+  - from: E7^1
+    to: A6
+    chars: ["3", "2e"]
+    implied: ["2e"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: '(1 - t^3)^2 (x^3 + x y^3 + x^2 y^2 + t^3 y^4) - t^3 (1 - t^3) x^2 y + t^6 (1 - t^3) x y^2 + t^9 x^2'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = x^2*y^2+x*y^3-y^4+x^3-x^2*y-x*y^2-x^2;   // F_t at t = 2
+          classifyCeq(F);   // A[6]:x^2+y^7
+        singular_note: 'At $t = 2$ only; not a proof for generic $t$.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + x^2 y z + c_7 + t^4 x y^2'
+        where: 'c_7 = t y^2 z + t^3 x z + t^2 x^2 y'
+        generic: true
+  - from: E8^2
+    to: D7
+    chars: ["3"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + t^2 x^2 y + 2 t x y^3 + y^5 + x^2 y^2'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^5+x^2*y^2+x*y^3+x^3+x^2*y;   // F_t at t = 2
+          classifyCeq(F);   // D[7]:x^2*y+y^6
+        singular_note: 'At $t = 2$ only; not a proof for generic $t$.'
+  - from: E8^2
+    to: A7
+    chars: ["3"]
+    refs: { "3": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + y^5 + x^2 y^2 + t (1 + t) x y^3 + t^3 x^2 y - t^3 (1 - t) y^4 + t^4 (1 - t) x y^2 - t^5 (1 - t) x^2'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^5+x^2*y^2-y^4+x^3-x^2*y-x*y^2-x^2;   // F_t at t = 2
+          classifyCeq(F);   // A[7]:x^2+y^8
+        singular_note: 'At $t = 2$ only; not a proof for generic $t$.'
+  - from: E8^0
+    to: A8
+    chars: ["3"]
+    refs: { "3": '[GK, §4.2], [Kn, §4]' }
+    unexpected: 'Not possible in characteristic $0$ [Ar].'
+    unfoldings:
+      - chars: ["3"]
+        f: 'x^3 + y^5 + t^5 x^2 - 2 t^4 x y^2 - t x y^3 + t^3 y^4'
+        source: '[GK]'
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 3,(x,y),ds;
+          poly F = y^5-x*y^3+y^4+x^3+x*y^2+x^2;   // F_t at t = 1
+          classifyCeq(F);   // A[8]:x^2+y^9
+        singular_note: 'Weighted homogeneous in $t$, so $t = 1$ suffices.'
+  - from: E8^1
+    to: E7
+    chars: ["5"]
+    refs: { "5": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["5"]
+        f: 'x^3 + y^5 + x y^4 + t x y^3'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x*y^4+y^5+x*y^3+x^3;   // F_t at t = 1
+          classifyCeq(F);   // E^0[7]:x^3+x*y^3
+        singular_note: 'At $t = 1$ only; not a proof for generic $t$.'
+  - from: E8^1
+    to: D7
+    chars: ["5"]
+    refs: { "5": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["5"]
+        f: 'x^3 + t^2 x^2 y + 2 t x y^3 + y^5 + x y^4'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = x*y^4+y^5+2*x*y^3+x^3+x^2*y;   // F_t at t = 1
+          classifyCeq(F);   // D[7]:x^2*y+y^6
+        singular_note: 'At $t = 1$ only; not a proof for generic $t$.'
+  - from: E8^1
+    to: A7
+    chars: ["5", "2e"]
+    implied: ["2e"]
+    refs: { "5": '[GK, §4.2]' }
+    unfoldings:
+      - chars: ["5"]
+        f: 'a^3 b^2 (x^3 + y^5 + t^{25} x^2) - b^4 x y^4 + a^4 b^3 t^{20} x y^2 - 2 a^7 b t^5 x y^3 + (2 + t^{10}) a t^{10} x^2 y - a^5 b^4 t^{15} y^4'
+        where: 'a = 1 + t^2,\quad b = 3 + t^2'
+        generic: true
+        singular: |
+          LIB "classifyceq.lib";
+          ring r = 5,(x,y),ds;
+          poly F = -x*y^4-2*y^5+x*y^3-2*y^4-2*x^3+x^2*y-x*y^2-2*x^2;   // F_t at t = 1
+          classifyCeq(F);   // A[7]:x^2+y^8
+        singular_note: 'At $t = 1$ only; not a proof for generic $t$.'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y^3 z + c_8'
+        where: 'c_8 = t^3 y^2 z + t^5 x z + t^2 x y^3'
+        generic: true
+  - from: A4^1
+    to: A3
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^5 + x y^3 + t x y^2'
+        generic: true
+  - from: A4^0
+    to: A4^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^5 + t x y^3'
+  - from: D5^1
+    to: D4
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^4 + x y^3 + t x y^2'
+        generic: true
+  - from: D5^0
+    to: D5^1
+    chars: ["2", "2e"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^4 + t x y^3'
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^2 z + t x y z'
+  - from: D5^0
+    to: A4^0
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^4 + t x^2'
+  - from: D5^1
+    to: A4^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^4 + x y^3 + t x^2'
+        generic: true
+  - from: A5
+    to: A4^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + x y^3 + t y^5'
+  - from: A6^2
+    to: A5
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^7 + x y^4 + t x y^3'
+        generic: true
+  - from: A6^0
+    to: A6^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^7 + t x y^5'
+  - from: A6^1
+    to: A6^2
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^7 + x y^5 + t x y^4'
+        generic: true
+  - from: A6^2
+    to: A4^0
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^7 + x y^4 + t y^5'
+        generic: true
+  - from: D7^2
+    to: D6
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^6 + x y^4 + t x y^3'
+        generic: true
+  - from: D7^0
+    to: D7^1
+    chars: ["2", "2e"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^6 + t x y^5'
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^3 z + t x y^2 z'
+  - from: D7^1
+    to: D7^2
+    chars: ["2", "2e"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^6 + x y^5 + t x y^4'
+        generic: true
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^3 z + x y^2 z + t x y z'
+        generic: true
+  - from: D7^2
+    to: D5^0
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^6 + x y^4 + t y^4'
+        generic: true
+  - from: D7^0
+    to: A6^0
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^6 + t x^2'
+  - from: D7^1
+    to: A6^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^6 + x y^5 + t x^2'
+        generic: true
+  - from: D7^2
+    to: A6^2
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^6 + x y^4 + t x^2'
+        generic: true
+  - from: D6
+    to: D5^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + x y^3 + t y^4'
+  - from: A7
+    to: A6^2
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + x y^4 + t y^7'
+  - from: A8^3
+    to: A7
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^9 + x y^5 + t x y^4'
+        generic: true
+  - from: A8^0
+    to: A8^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^9 + t x y^7'
+  - from: A8^1
+    to: A8^2
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^9 + x y^7 + t x y^6'
+        generic: true
+  - from: A8^2
+    to: A8^3
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^9 + x y^6 + t x y^5'
+        generic: true
+  - from: A8^2
+    to: A6^0
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^9 + x y^6 + t y^7'
+        generic: true
+  - from: A8^3
+    to: A6^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + y^9 + x y^5 + t y^7'
+        generic: true
+  - from: D9^3
+    to: D8
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^8 + x y^5 + t x y^4'
+        generic: true
+  - from: D9^0
+    to: D9^1
+    chars: ["2", "2e"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^8 + t x y^7'
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + t x y^3 z'
+  - from: D9^1
+    to: D9^2
+    chars: ["2", "2e"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^8 + x y^7 + t x y^6'
+        generic: true
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + x y^3 z + t x y^2 z'
+        generic: true
+  - from: D9^2
+    to: D9^3
+    chars: ["2", "2e"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^8 + x y^6 + t x y^5'
+        generic: true
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + x y^2 z + t x y z'
+        generic: true
+  - from: D9^2
+    to: D7^0
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^8 + x y^6 + t y^6'
+        generic: true
+  - from: D9^3
+    to: D7^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^8 + x y^5 + t y^6'
+        generic: true
+  - from: D9^0
+    to: A8^0
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^8 + t x^2'
+  - from: D9^1
+    to: A8^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^8 + x y^7 + t x^2'
+        generic: true
+  - from: D9^2
+    to: A8^2
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^8 + x y^6 + t x^2'
+        generic: true
+  - from: D9^3
+    to: A8^3
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + y^8 + x y^5 + t x^2'
+        generic: true
+  - from: D8
+    to: D7^2
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 y + x y^4 + t y^6'
+  - from: A9
+    to: A8^3
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^2 + x y^5 + t y^9'
+  - from: E6^0
+    to: D5^0
+    chars: ["2", "2e"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^3 + t x^2 y + y^4'
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^2 z + t x^2 y'
+  - from: E6^0
+    to: A6^2
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unexpected: 'Not possible in characteristic $0$ [Ar].'
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^3 + y^4 + t^2 x^2'
+        note: 'Arnold''s $A_5 \leftarrow E_6$ unfolding mod $2$; [GK] use $t^4$.'
+        source: '[GK]'
+  - from: E6^1
+    to: D5^1
+    chars: ["2", "2e"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^3 + t x^2 y + y^4 + x y^3'
+        generic: true
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^2 z + x y z + t x^2 y'
+        generic: true
+  - from: E7
+    to: E6^1
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^3 + x y^3 + t y^4'
+        note: 'Arnold''s $A_6 \leftarrow E_7$ unfolding mod $2$.'
+  - from: E8
+    to: E6^0
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^3 + y^5 + t y^4'
+  - from: E8
+    to: D7^2
+    chars: ["2"]
+    refs: { "2": '[GK, §4.3]' }
+    unfoldings:
+      - chars: ["2"]
+        f: 'x^3 + t^2 x^2 y + y^5'
+  - from: D4^0
+    to: D4^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^2 + t x y z'
+  - from: D4^0
+    to: A3
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^2 + t x z'
+  - from: D4^1
+    to: A3
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^2 + x y z + t x z'
+        generic: true
+  - from: D5^0
+    to: D4^0
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^2 z + t x^2'
+  - from: D5^1
+    to: D4^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^2 z + x y z + t x^2'
+        generic: true
+  - from: D5^0
+    to: A4
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^2 z + t x z'
+  - from: D5^1
+    to: A4
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^2 z + x y z + t x z'
+        generic: true
+  - from: D6^0
+    to: D6^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^3 + t x y^2 z'
+  - from: D6^1
+    to: D6^2
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^3 + x y^2 z + t x y z'
+        generic: true
+  - from: D6^0
+    to: D5^0
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^3 + t y^2 z'
+  - from: D6^1
+    to: D5^0
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^3 + x y^2 z + t y^2 z'
+        generic: true
+  - from: D6^2
+    to: D5^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^3 + x y z + t y^2 z'
+        generic: true
+  - from: D6^0
+    to: A5
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^3 + t x z'
+  - from: D6^1
+    to: A5
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^3 + x y^2 z + t x z'
+        generic: true
+  - from: D6^2
+    to: A5
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^3 + x y z + t x z'
+        generic: true
+  - from: D7^0
+    to: D6^0
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^3 z + t x^2'
+  - from: D7^1
+    to: D6^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^3 z + x y^2 z + t x^2'
+        generic: true
+  - from: D7^2
+    to: D6^2
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^3 z + x y z + t x^2'
+        generic: true
+  - from: D7^0
+    to: A6
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^3 z + t x z'
+  - from: D7^1
+    to: A6
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^3 z + x y^2 z + t x z'
+        generic: true
+  - from: D7^2
+    to: A6
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^3 z + x y z + t x z'
+        generic: true
+  - from: D8^0
+    to: D8^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + t x y^3 z'
+  - from: D8^1
+    to: D8^2
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + x y^3 z + t x y^2 z'
+        generic: true
+  - from: D8^2
+    to: D8^3
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + x y^2 z + t x y z'
+        generic: true
+  - from: D8^0
+    to: D7^0
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + t y^3 z'
+  - from: D8^1
+    to: D7^0
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + x y^3 z + t y^3 z'
+        generic: true
+  - from: D8^2
+    to: D7^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + x y^2 z + t y^3 z'
+        generic: true
+  - from: D8^3
+    to: D7^2
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + x y z + t y^3 z'
+        generic: true
+  - from: D8^0
+    to: A7
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + t x z'
+  - from: D8^1
+    to: A7
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + x y^3 z + t x z'
+        generic: true
+  - from: D8^2
+    to: A7
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + x y^2 z + t x z'
+        generic: true
+  - from: D8^3
+    to: A7
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + x y^4 + x y z + t x z'
+        generic: true
+  - from: D9^0
+    to: D8^0
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + t x^2'
+  - from: D9^1
+    to: D8^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + x y^3 z + t x^2'
+        generic: true
+  - from: D9^2
+    to: D8^2
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + x y^2 z + t x^2'
+        generic: true
+  - from: D9^3
+    to: D8^3
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + x y z + t x^2'
+        generic: true
+  - from: D9^0
+    to: A8
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + t x z'
+  - from: D9^1
+    to: A8
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + x y^3 z + t x z'
+        generic: true
+  - from: D9^2
+    to: A8
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + x y^2 z + t x z'
+        generic: true
+  - from: D9^3
+    to: A8
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^2 y + y^4 z + x y z + t x z'
+        generic: true
+  - from: E7^1
+    to: E7^2
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + x^2 y z + t y^3 z'
+        generic: true
+  - from: E7^2
+    to: E7^3
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + y^3 z + t x y z'
+        generic: true
+  - from: E7^0
+    to: D6^0
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + t x^2 y'
+  - from: E7^1
+    to: E6^0
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + x^2 y z + t y^2 z'
+        generic: true
+  - from: E7^1
+    to: D6^0
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + x^2 y z + t x^2 y'
+        generic: true
+  - from: E7^2
+    to: E6^0
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + y^3 z + t y^2 z'
+        generic: true
+  - from: E7^2
+    to: D6^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + y^3 z + t x^2 y'
+        generic: true
+  - from: E7^3
+    to: E6^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + x y z + t y^2 z'
+        generic: true
+  - from: E7^3
+    to: D6^2
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + x y z + t x^2 y'
+        generic: true
+  - from: E7^0
+    to: A7
+    chars: ["2e"]
+    implied: ["2e"]
+    unexpected: 'Not possible in characteristic $0$ [Ar].'
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + c_7'
+        where: 'c_7 = t y^2 z + t^3 x z + t^2 x^2 y'
+  - from: E7^1
+    to: A7
+    chars: ["2e"]
+    implied: ["2e"]
+    unexpected: 'Not possible in characteristic $0$ [Ar].'
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + x^2 y z + c_7'
+        where: 'c_7 = t y^2 z + t^3 x z + t^2 x^2 y'
+        generic: true
+  - from: E7^2
+    to: A7
+    chars: ["2e"]
+    refs: { "2e": '[GK, §4.5]; with $E_7^0 \to E_7^1 \to E_7^2$ it gives $E_7^0 \to A_7$ [Kn, §4]' }
+    unexpected: 'Not possible in characteristic $0$ [Ar].'
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + y^3 z + c_7 + t^2 x y z'
+        where: 'c_7 = t y^2 z + t^3 x z + t^2 x^2 y'
+        generic: true
+  - from: E7^2
+    to: A6
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + y^3 z + c_7 + t^3 z^2'
+        where: 'c_7 = t y^2 z + t^3 x z + t^2 x^2 y'
+        generic: true
+  - from: E7^3
+    to: A6
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + x y^3 + x y z + c_7 + t z^2'
+        where: 'c_7 = t y^2 z + t^3 x z + t^2 x^2 y'
+        generic: true
+  - from: E8^2
+    to: E8^3
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y^2 z + t y^3 z'
+        generic: true
+  - from: E8^3
+    to: E8^4
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + y^3 z + t x y z'
+        generic: true
+  - from: E8^3
+    to: E7^2
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + y^3 z + t x y^3'
+        generic: true
+  - from: E8^4
+    to: E7^3
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y z + t x y^3'
+        generic: true
+  - from: E8^0
+    to: D8^0
+    chars: ["2e"]
+    refs: { "2e": '[GK, §4.5], [Kn, §4]' }
+    unexpected: 'Not possible in characteristic $0$ [Ar].'
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + t x^2 y'
+  - from: E8^1
+    to: D8^1
+    chars: ["2e"]
+    refs: { "2e": '[GK, §4.5]' }
+    unexpected: 'Not possible in characteristic $0$ [Ar].'
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y^3 z + t x^2 y'
+        generic: true
+  - from: E8^2
+    to: D8^2
+    chars: ["2e"]
+    refs: { "2e": '[GK, §4.5]' }
+    unexpected: 'Not possible in characteristic $0$ [Ar].'
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y^2 z + t x^2 y'
+        generic: true
+  - from: E8^3
+    to: D7^1
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + y^3 z + t x^2 y'
+        generic: true
+  - from: E8^4
+    to: D7^2
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y z + t x^2 y'
+        generic: true
+  - from: E8^2
+    to: D7^0
+    chars: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y^2 z + t x y^2'
+        generic: true
+  - from: E8^3
+    to: A7
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + y^3 z + c_8 + t^2 x y z'
+        where: 'c_8 = t^3 y^2 z + t^5 x z + t^2 x y^3'
+        generic: true
+  - from: E8^1
+    to: A6
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y^3 z + c_8 + t^8 x y^2'
+        where: 'c_8 = t^3 y^2 z + t^5 x z + t^2 x y^3'
+        generic: true
+  - from: E8^2
+    to: A6
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y^2 z + c_8'
+        where: 'c_8 = t^3 y^2 z + t^5 x z + t^2 x y^3'
+        generic: true
+  - from: E8^4
+    to: A6
+    chars: ["2e"]
+    implied: ["2e"]
+    unfoldings:
+      - chars: ["2e"]
+        f: 'z^2 + x^3 + y^5 + x y z + c_8 + t z^2'
+        where: 'c_8 = t^3 y^2 z + t^5 x z + t^2 x y^3'
+        generic: true

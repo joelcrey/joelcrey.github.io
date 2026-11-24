@@ -7,7 +7,7 @@ Lists the posts with `category: math`, newest first. A series is shown once, whe
 with its title linking to part 1 (whose box lists all the parts and files).
 With no math post the page is not built at all (_plugins/hide_empty_math_page.rb).
 {% endcomment %}
-{% assign math_posts = site.posts | where_exp: "post", "post.categories contains 'math'" %}
+{% assign math_posts = site.posts | where_exp: "post", "post.categories contains 'math'" | where_exp: "post", "post.hidden != true" %}
 {% assign listed_series = "" %}
 <div class="post-list">
 {% for post in math_posts %}

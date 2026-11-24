@@ -27,14 +27,15 @@ layout: default
 	</section>
 {% endif %}
 
-{% if site.posts.size > 0 %}
+{% assign shown_posts = site.posts | where_exp: "post", "post.hidden != true" %}
+{% if shown_posts.size > 0 %}
 <!-- Latest posts -->
 	<section>
 		<header class="major">
 			<h2>Latest posts</h2>
 		</header>
 		<div class="posts">
-			{% for post in site.posts limit: 6 %}
+			{% for post in shown_posts limit: 6 %}
 			<article>
 				{% if post.image %}<a href="{{ post.url | relative_url }}" class="image"><img src="{{ post.image | relative_url }}" alt="" /></a>{% endif %}
 				<h3>{{ post.title }}</h3>

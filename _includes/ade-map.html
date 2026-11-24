@@ -1,0 +1,30 @@
+<!-- Adjacency map of simple (ADE) singularities. The data is in _data/ade.yml; the script is assets/js/ade-map.js. -->
+<div class="ade" id="ade">
+	<div class="ade-bar">
+		<span class="ade-label">Equivalence</span>
+		<span class="ade-seg" role="group" aria-label="Equivalence" id="ade-equiv"></span>
+		<span class="ade-label">Characteristic</span>
+		<span class="ade-seg" role="group" aria-label="Characteristic" id="ade-chars"></span>
+	</div>
+	<div class="ade-scroll"><div class="ade-plane" id="ade-plane">
+		<svg class="ade-edges" id="ade-edges" aria-hidden="true">
+			<defs>
+				<marker id="ade-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" fill="#b4bcc1"/></marker>
+				<marker id="ade-arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" fill="#3d4449"/></marker>
+				<marker id="ade-arr-new" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" fill="#5690f3"/></marker>
+				<marker id="ade-arr-sel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" fill="#8e44ad"/></marker>
+				<marker id="ade-arr-un" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" fill="#e0703a"/></marker>
+			</defs>
+		</svg>
+		<p class="ade-empty" id="ade-empty" hidden>No right simple singularities here.</p>
+	</div></div>
+	<ul class="ade-legend">
+		<li><span class="ln d"></span> deforms into (the arrow points to the simpler one)</li>
+		<li class="lg-contact"><span class="new-t">A</span><span class="ln new"></span> new in this characteristic</li>
+		<li class="lg-contact"><span class="ln un"></span> not possible in characteristic 0</li>
+	</ul>
+	<p class="ade-cnote" id="ade-note"></p>
+	<div class="ade-detail" id="ade-detail"><p class="ade-hint">Click a singularity or an arrow.</p></div>
+</div>
+<script>window.ADE = {{ site.data.ade | jsonify }};</script>
+<script src="{{ '/assets/js/ade-map.js' | relative_url }}"></script>
